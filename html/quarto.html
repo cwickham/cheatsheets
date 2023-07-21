@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-99.9.9">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -82,11 +82,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "panel-placement": "end",
   "type": "overlay",
   "limit": 20,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -101,8 +96,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../html/css/cheatsheet.css">
 </head>
@@ -113,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
+      <div class="navbar-brand-container">
     <a href="https://posit.co" class="navbar-brand navbar-brand-logo">
     <img src="../html/images/posit-logo.png" alt="posit logo" class="navbar-logo">
     </a>
@@ -144,9 +137,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
+          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -159,69 +152,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#what-is-quarto" id="toc-what-is-quarto" class="nav-link active" data-scroll-target="#what-is-quarto">What is Quarto?</a></li>
-  <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow">Workflow</a></li>
-  <li><a href="#tools" id="toc-tools" class="nav-link" data-scroll-target="#tools">Tools</a></li>
-  <li><a href="#command-palette" id="toc-command-palette" class="nav-link" data-scroll-target="#command-palette">Command Palette</a>
+  <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow">Workflow</a>
   <ul class="collapse">
-  <li><a href="#source-editor" id="toc-source-editor" class="nav-link" data-scroll-target="#source-editor">Source Editor</a></li>
-  <li><a href="#visual-editor" id="toc-visual-editor" class="nav-link" data-scroll-target="#visual-editor">Visual Editor</a></li>
-  <li><a href="#rendered-output" id="toc-rendered-output" class="nav-link" data-scroll-target="#rendered-output">Rendered Output</a></li>
-  </ul></li>
-  <li><a href="#render-button" id="toc-render-button" class="nav-link" data-scroll-target="#render-button">Render Button</a></li>
-  <li><a href="#commands" id="toc-commands" class="nav-link" data-scroll-target="#commands">Commands</a>
-  <ul class="collapse">
-  <li><a href="#quarto-extensions" id="toc-quarto-extensions" class="nav-link" data-scroll-target="#quarto-extensions">Quarto Extensions</a></li>
+  <li><a href="#author" id="toc-author" class="nav-link" data-scroll-target="#author">Author</a></li>
+  <li><a href="#render" id="toc-render" class="nav-link" data-scroll-target="#render">Render</a></li>
+  <li><a href="#preview" id="toc-preview" class="nav-link" data-scroll-target="#preview">Preview</a></li>
+  <li><a href="#publish" id="toc-publish" class="nav-link" data-scroll-target="#publish">Publish</a></li>
   </ul></li>
   <li><a href="#embed-code" id="toc-embed-code" class="nav-link" data-scroll-target="#embed-code">Embed Code</a>
   <ul class="collapse">
   <li><a href="#code-cells" id="toc-code-cells" class="nav-link" data-scroll-target="#code-cells">Code Cells</a></li>
   <li><a href="#execution-options" id="toc-execution-options" class="nav-link" data-scroll-target="#execution-options">Execution Options</a></li>
-  <li><a href="#other-chunk-options" id="toc-other-chunk-options" class="nav-link" data-scroll-target="#other-chunk-options">Other chunk options</a></li>
+  <li><a href="#other-cell-options" id="toc-other-cell-options" class="nav-link" data-scroll-target="#other-cell-options">Other Cell Options</a></li>
   <li><a href="#inline-code" id="toc-inline-code" class="nav-link" data-scroll-target="#inline-code">Inline Code</a></li>
   </ul></li>
-  <li><a href="#render" id="toc-render" class="nav-link" data-scroll-target="#render">Render</a>
-  <ul class="collapse">
-  <li><a href="#execution-engine" id="toc-execution-engine" class="nav-link" data-scroll-target="#execution-engine">Execution Engine</a></li>
-  </ul></li>
-  <li><a href="#insert-citations" id="toc-insert-citations" class="nav-link" data-scroll-target="#insert-citations">Insert Citations</a>
-  <ul class="collapse">
-  <li><a href="#build-your-bibliography" id="toc-build-your-bibliography" class="nav-link" data-scroll-target="#build-your-bibliography">Build Your Bibliography</a></li>
-  <li><a href="#insert-citations-1" id="toc-insert-citations-1" class="nav-link" data-scroll-target="#insert-citations-1">Insert Citations</a></li>
-  </ul></li>
-  <li><a href="#insert-tables" id="toc-insert-tables" class="nav-link" data-scroll-target="#insert-tables">Insert Tables</a></li>
   <li><a href="#write-with-markdown" id="toc-write-with-markdown" class="nav-link" data-scroll-target="#write-with-markdown">Write With Markdown</a></li>
-  <li><a href="#callouts" id="toc-callouts" class="nav-link" data-scroll-target="#callouts">Callouts</a></li>
-  <li><a href="#layout" id="toc-layout" class="nav-link" data-scroll-target="#layout">Layout</a></li>
-  <li><a href="#diagrams" id="toc-diagrams" class="nav-link" data-scroll-target="#diagrams">Diagrams</a></li>
-  <li><a href="#equations" id="toc-equations" class="nav-link" data-scroll-target="#equations">Equations</a></li>
-  <li><a href="#html-theming" id="toc-html-theming" class="nav-link" data-scroll-target="#html-theming">HTML Theming</a></li>
-  <li><a href="#font" id="toc-font" class="nav-link" data-scroll-target="#font">Font</a></li>
-  <li><a href="#include-figures" id="toc-include-figures" class="nav-link" data-scroll-target="#include-figures">Include Figures</a>
+  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures">Figures</a>
   <ul class="collapse">
   <li><a href="#markdown" id="toc-markdown" class="nav-link" data-scroll-target="#markdown">Markdown</a></li>
   <li><a href="#computation" id="toc-computation" class="nav-link" data-scroll-target="#computation">Computation</a></li>
   </ul></li>
-  <li><a href="#tables-1" id="toc-tables-1" class="nav-link" data-scroll-target="#tables-1">Tables</a>
+  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables">Tables</a>
   <ul class="collapse">
   <li><a href="#markdown-1" id="toc-markdown-1" class="nav-link" data-scroll-target="#markdown-1">Markdown</a></li>
   <li><a href="#computation-1" id="toc-computation-1" class="nav-link" data-scroll-target="#computation-1">Computation</a></li>
   </ul></li>
+  <li><a href="#cross-references" id="toc-cross-references" class="nav-link" data-scroll-target="#cross-references">Cross References</a></li>
+  <li><a href="#citations" id="toc-citations" class="nav-link" data-scroll-target="#citations">Citations</a></li>
+  <li><a href="#callouts" id="toc-callouts" class="nav-link" data-scroll-target="#callouts">Callouts</a></li>
+  <li><a href="#shortcodes" id="toc-shortcodes" class="nav-link" data-scroll-target="#shortcodes">Shortcodes</a></li>
+  <li><a href="#layout" id="toc-layout" class="nav-link" data-scroll-target="#layout">Layout</a></li>
   <li><a href="#set-output-formats-and-their-options-in-yaml" id="toc-set-output-formats-and-their-options-in-yaml" class="nav-link" data-scroll-target="#set-output-formats-and-their-options-in-yaml">Set Output Formats and Their Options in YAML</a>
   <ul class="collapse">
-  <li><a href="#output-format-table" id="toc-output-format-table" class="nav-link" data-scroll-target="#output-format-table">Output Format Table</a></li>
   <li><a href="#output-options-table" id="toc-output-options-table" class="nav-link" data-scroll-target="#output-options-table">Output Options Table</a></li>
   </ul></li>
-  <li><a href="#more-header-options" id="toc-more-header-options" class="nav-link" data-scroll-target="#more-header-options">More Header Options</a>
-  <ul class="collapse">
-  <li><a href="#parameters" id="toc-parameters" class="nav-link" data-scroll-target="#parameters">Parameters</a></li>
-  </ul></li>
-  <li><a href="#publishing" id="toc-publishing" class="nav-link" data-scroll-target="#publishing">Publishing</a></li>
-  <li><a href="#share" id="toc-share" class="nav-link" data-scroll-target="#share">Share</a></li>
   <li><a href="#quarto-projects" id="toc-quarto-projects" class="nav-link" data-scroll-target="#quarto-projects">Quarto Projects</a></li>
-  <li><a href="#interactivity" id="toc-interactivity" class="nav-link" data-scroll-target="#interactivity">Interactivity</a></li>
-  <li><a href="#extensions" id="toc-extensions" class="nav-link" data-scroll-target="#extensions">Extensions</a></li>
+  <li><a href="#quarto-commands" id="toc-quarto-commands" class="nav-link" data-scroll-target="#quarto-commands">Quarto Commands</a></li>
+  <li><a href="#parameters" id="toc-parameters" class="nav-link" data-scroll-target="#parameters">Parameters</a></li>
+  <li><a href="#interactivity" id="toc-interactivity" class="nav-link" data-scroll-target="#interactivity">Interactivity?</a></li>
+  <li><a href="#extensions" id="toc-extensions" class="nav-link" data-scroll-target="#extensions">Extensions?</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/rstudio/cheatsheets/edit/main/html/quarto.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/rstudio/cheatsheets/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rstudio/cheatsheets/edit/main/html/quarto.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/rstudio/cheatsheets/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
@@ -250,7 +221,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
-
 </header>
 
 
@@ -261,49 +231,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <br><br>
 </div></div><section id="what-is-quarto" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-quarto">What is Quarto?</h2>
+<p>Quarto is an <strong>open-source scientific and technical publishing system</strong>:</p>
 <ul>
-<li>An open-source scientific and technical publishing system</li>
-<li>Create dynamic content with Python, R, Julia, and Observable. Publish reproducible, production quality articles, presentations, websites, blogs, and books in HTML, PDF, MS Word, ePub, and more. Share knowledge and insights organization-wide by publishing to Posit Connect, Confluence, or other publishing systems.</li>
+<li><p>Create dynamic content with Python, R, Julia, and Observable.</p></li>
+<li><p>Publish reproducible, production quality articles, presentations, websites, blogs, and books in HTML, PDF, MS Word, ePub, and more.</p></li>
+<li><p>Share knowledge and insights organization-wide by publishing to Posit Connect, Confluence, or other publishing systems.</p></li>
 </ul>
-<p>Write using Pandoc markdown, including equations, citations, crossrefs, figure panels, callouts, advanced layout, and more.</p>
-<ul>
-<li><p><strong>.qmd files:</strong> Develop your code and ideas side-by-side in a single document. Run code as individual chunks or as an entire document.</p></li>
-<li><p><strong>Dynamic Documents:</strong> Knit together plots, tables, and results with narrative text. Render to a variety of formats like HTML, PDF, MS Word, or MS PowerPoint.</p></li>
-<li><p><strong>Reproducible Research:</strong> Upload, link to, or attach your report to share. Anyone can read or run your code to reproduce your work.</p></li>
-</ul>
-<p>Quarto is a command line tool. Get it from https://quarto.org/docs/download/, or use version bundled RStudio.</p>
+<p>Get Quarto from: <a href="https://quarto.org/docs/download/" class="uri">https://quarto.org/docs/download/</a></p>
+<p>Or, use version bundled with RStudio.</p>
 </section>
 <section id="workflow" class="level2">
 <h2 class="anchored" data-anchor-id="workflow">Workflow</h2>
-<ol type="1">
-<li><p>Open a <strong>new .qmd file</strong>.</p></li>
-<li><p><strong>Embed code</strong> in chunks. Run code by line, by chunk, or all at once.</p></li>
-<li><p><strong>Write</strong> text, and add tables, figures, images, and citations. Format with Markdown syntax or use a Visual Editor in RStudio or VS Code.</p></li>
-<li><p><strong>Set output format(s) and options</strong> in the YAML header.</p></li>
-<li><p><strong>Save and render</strong> the whole document. Render periodically to preview your work as you write.</p></li>
-<li><p><strong>Share your work!</strong></p></li>
-</ol>
-</section>
-<section id="tools" class="level2">
-<h2 class="anchored" data-anchor-id="tools">Tools</h2>
-<p>Rich editing experience in:</p>
+<section id="author" class="level3">
+<h3 class="anchored" data-anchor-id="author">Author</h3>
+<p>(Screenshot of .qmd in source editor)</p>
+<p>Highlight:</p>
+<ul>
+<li><code>.qmd</code>: plain text, use any text editor</li>
+<li>YAML Header
+<ul>
+<li>Set Output Format(s) and Options</li>
+</ul></li>
+<li>Markdown
+<ul>
+<li>Write Text</li>
+</ul></li>
+<li>Code cells
+<ul>
+<li>Embed Code</li>
+</ul></li>
+</ul>
+<section id="authoring-tools" class="level4">
+<h4 class="anchored" data-anchor-id="authoring-tools">Authoring Tools</h4>
+<p>Rich authoring experience in:</p>
 <ul>
 <li>RStudio</li>
-<li>VS Code (Get Quarto VS Code Extension quarto-vscode)</li>
+<li>VS Code with the Quarto extension (quarto-vscode)</li>
 </ul>
-<p>Can also use …</p>
-<p>Editor Features:</p>
-<ul>
-<li>New document</li>
-<li>New project</li>
-<li>Render button</li>
-<li>Chunk Navigation</li>
-<li>Publishing Shortcuts (RStudio only)</li>
-<li>Visual Editor</li>
-</ul>
-</section>
-<section id="command-palette" class="level2">
-<h2 class="anchored" data-anchor-id="command-palette">Command Palette</h2>
 <p><em>Is this useful? Maybe as a Useful Shortcuts table, and use general language for command.</em></p>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -311,7 +275,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <table class="table">
 <colgroup>
 <col style="width: 56%">
-<col style="width: 19%">
+<col style="width: 22%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -351,7 +315,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <table class="table">
 <colgroup>
 <col style="width: 41%">
-<col style="width: 15%">
+<col style="width: 22%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -389,40 +353,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<section id="source-editor" class="level3">
-<h3 class="anchored" data-anchor-id="source-editor">Source Editor</h3>
-<p>Screenshot Here</p>
-<p>Point out: - header - code cells - markdown content</p>
-<p>Expand to read about the features in the Source Editor</p>
-<section id="features-within-the-source-editor" class="level4">
-<h4 class="anchored" data-anchor-id="features-within-the-source-editor">Features within the Source Editor</h4>
-<ol type="1">
-<li>New File</li>
-<li>Embed Code</li>
-<li>Write Text</li>
-<li>Set Output Format(s) and Options</li>
-<li>Save and Render</li>
-<li>Share</li>
-</ol>
-<ul>
-<li>Set preview location</li>
-<li>Insert code chunk</li>
-<li>Go to code chunk</li>
-<li>Run code chunk(s)</li>
-<li>Show outline</li>
-<li>Modify chunk options</li>
-<li>Run all previous chunks</li>
-<li>Run current chunk</li>
-<li>Switch to visual editor</li>
-</ul>
 </section>
-</section>
-<section id="visual-editor" class="level3">
-<h3 class="anchored" data-anchor-id="visual-editor">Visual Editor</h3>
-<p>Screenshot Here</p>
-<p>Expand to read about the features in the Visual Editor</p>
-<section id="features-within-the-visual-editor" class="level4">
-<h4 class="anchored" data-anchor-id="features-within-the-visual-editor">Features within the Visual Editor</h4>
+<section id="visual-editor" class="level4">
+<h4 class="anchored" data-anchor-id="visual-editor">Visual Editor</h4>
+<p>(Screenshot of Visual Editor toolbar, with callouts for features below)</p>
+<section id="features-within-the-visual-editor" class="level5">
+<h5 class="anchored" data-anchor-id="features-within-the-visual-editor">Features within the Visual Editor</h5>
 <ul>
 <li>Insert citations</li>
 <li>Insert and edit tables</li>
@@ -432,32 +368,71 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 </section>
-<section id="rendered-output" class="level3">
-<h3 class="anchored" data-anchor-id="rendered-output">Rendered Output</h3>
-<p>Screenshot Here</p>
 </section>
-</section>
-<section id="render-button" class="level2">
-<h2 class="anchored" data-anchor-id="render-button">Render Button</h2>
-<p>Render a document with the Render button in RStudio or VS Code</p>
-</section>
-<section id="commands" class="level2">
-<h2 class="anchored" data-anchor-id="commands">Commands</h2>
-<p>Quarto is a command line tool. Run commands in the Terminal.</p>
-<p>The <strong>Render</strong> button is like:</p>
+<section id="render" class="level3">
+<h3 class="anchored" data-anchor-id="render">Render</h3>
+<p><strong>Save,</strong> then <strong>Render</strong> to preview the document output. The resulting HTML/PDF/MS Word/etc. document will be created and saved in the same directory as the .qmd file.</p>
+<p><strong>Render</strong>:</p>
+<ul>
+<li><p>Render button (Screenshot RStudio and VS Code)</p></li>
+<li><p>On command line:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Terminal</strong></pre>
+</div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview document.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Render all formats:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render document.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Render to a specific format:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render document.qmd <span class="at">--to</span> pdf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Install tinytex, recommended for PDF output:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> install tinytex</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="quarto-extensions" class="level3">
-<h3 class="anchored" data-anchor-id="quarto-extensions">Quarto Extensions</h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> use</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+</ul>
+<p>When you render a document, Quarto:</p>
+<ol type="1">
+<li>Runs the code and embeds results and text into an .md file with Knitr or Jupyter.</li>
+<li>Converts the .md file into the output format with Pandoc.</li>
+</ol>
+<section id="execution-engine" class="level4">
+<h4 class="anchored" data-anchor-id="execution-engine">Execution Engine</h4>
+<p><em>(This is getting into the weeds, but I do think it is important for new users to understand that its either Knitr or Jupyter that is doing the code evaluation. It’s relevant for other sections of cheatsheet: code cell options, inline code, tables, parameters. I’ll attempt to minimize/streamline.)</em></p>
+<p>Code is executed either with:</p>
+<ul>
+<li><p>Knitr: If there are <code>{r}</code> blocks. If there are also <code>{python}</code> blocks, they will be executed using the reticulate package.</p></li>
+<li><p>Jupyter: Any other code blocks (e.g.&nbsp;<code>{python}</code>, <code>{julia}</code>, <code>{bash}</code>). Kernel determined by the first executable code block. Other language blocks not evaluated.</p></li>
+</ul>
+<p>Override engine selection with <code>engine</code>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">engine</span><span class="kw">:</span><span class="at"> jupyter</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Set engine options with <code>knitr</code> or <code>jupyter</code>:</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">knitr</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">opts_knit</span><span class="kw">:</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">verbose</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">jupyter</span><span class="kw">:</span><span class="at"> julia-1.9</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="preview" class="level3">
+<h3 class="anchored" data-anchor-id="preview">Preview</h3>
+<p>(Screenshot of output here)</p>
+</section>
+<section id="publish" class="level3">
+<h3 class="anchored" data-anchor-id="publish">Publish</h3>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Terminal</strong></pre>
+</div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish {venue} document.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>{venue}</code>: quarto-pub, connect, gh-pages, netlify, confluence, (<em>coming in Quarto 1.4</em>) posit-cloud</p>
+<p>Publish button in RStudio (Screenshot here)</p>
+<p>(Need some text to distinguish these three venues)</p>
+<ul>
+<li><p><strong>Quarto Pubs</strong></p></li>
+<li><p><strong>Posit Cloud</strong></p></li>
+<li><p><strong>Posit Connect</strong> to share Quarto documents securely, schedule automatic updates, and interact with parameters in real time. <a href="https://posit.co/products/enterprise/connect/" class="uri">https://posit.co/products/enterprise/connect/</a>.</p></li>
+</ul>
 </section>
 </section>
 <section id="embed-code" class="level2">
@@ -465,18 +440,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="code-cells" class="level3">
 <h3 class="anchored" data-anchor-id="code-cells">Code Cells</h3>
 <p>Code cells start with <code>```{r}</code>, or <code>```{python}</code>, and end with <code>```</code>.</p>
-<p>Or use <strong>Insert Code Chunk</strong>.</p>
+<p>Or use <strong>Insert Code Chunk/Cell</strong>.</p>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: chunk-label</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: chunk-label</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: chunk-label</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: chunk-label</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -485,6 +460,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="execution-options" class="level3">
 <h3 class="anchored" data-anchor-id="execution-options">Execution Options</h3>
+<p>Set at the chunk level:</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p>Or globally in the YAML header with the <code>execute</code> option:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <table class="table">
 <colgroup>
 <col style="width: 14%">
@@ -533,680 +528,1022 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<p>Set at the chunk level:</p>
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-<p>Or globally in the YAML header with the <code>execute</code> option:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="other-chunk-options" class="level3">
-<h3 class="anchored" data-anchor-id="other-chunk-options">Other chunk options</h3>
+<section id="other-cell-options" class="level3">
+<h3 class="anchored" data-anchor-id="other-cell-options">Other Cell Options</h3>
 <p>Other options to control <a href="#figures">figures</a>, <a href="#tables">tables</a>, <a href="#layout">layout</a>.</p>
 <p>Available options depend on engine:</p>
 <ul>
-<li>Knitr: https://quarto.org/docs/reference/cells/cells-knitr.html</li>
-<li>Jupyter: https://quarto.org/docs/reference/cells/cells-jupyter.html</li>
+<li>Knitr: <a href="https://quarto.org/docs/reference/cells/cells-knitr.html" class="uri">https://quarto.org/docs/reference/cells/cells-knitr.html</a></li>
+<li>Jupyter: <a href="https://quarto.org/docs/reference/cells/cells-jupyter.html" class="uri">https://quarto.org/docs/reference/cells/cells-jupyter.html</a></li>
 </ul>
 </section>
 <section id="inline-code" class="level3">
 <h3 class="anchored" data-anchor-id="inline-code">Inline Code</h3>
-<section id="knitr" class="level4">
+<p>Use computed values directly in text sections. Code is evaluated at render and results appear as text.</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<section id="knitr" class="level4 quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <h4 class="anchored" data-anchor-id="knitr">Knitr</h4>
-<p>Insert <code>`r &lt;code&gt;`</code> into text sections. Code is evaluated at render and results appear as text.</p>
-<p>The markdown text</p>
-<pre><code>Built with `r getRversion()` </code></pre>
-<p>will render as “Built with 4.3.0” in the output file.</p>
-<p>v1.4</p>
-<p>Insert <code>`r &lt;code&gt;`</code> into text sections. Code is evaluated at render and results appear as text.</p>
-<p>The markdown text</p>
-<pre><code>Built with `r getRversion()` </code></pre>
-<p>will render as “Built with 4.3.0” in the output file.</p>
+<p>Two times two is <code>`r 2*2`</code>.</p>
 </section>
+<section id="jupyter" class="level4 quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<h4 class="anchored" data-anchor-id="jupyter">Jupyter</h4>
+<p><span class="small muted">Coming in Quarto v1.4</span></p>
+<p>Two times two is <code>`{python} 2*2`</code>.</p>
 </section>
+<section id="output" class="level4 quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<h4 class="anchored" data-anchor-id="output">Output</h4>
+<p>Two times two is 4.</p>
 </section>
-<section id="render" class="level2">
-<h2 class="anchored" data-anchor-id="render">Render</h2>
-<p>When you render a document, Quarto:</p>
-<ol type="1">
-<li>Runs the code and embeds results and text into an .md file with knitr or jupyter.</li>
-<li>Converts the .md file into the output format with Pandoc.</li>
-</ol>
-<p><strong>Save,</strong> then <strong>Render</strong> to preview the document output. The resulting HTML/PDF/MS Word/etc. document will be created and saved in the same directory as the .qmd file.</p>
-<p>Use <code>quarto render</code> to render in the Terminal. See <code>quarto render --help</code>.</p>
-<section id="execution-engine" class="level3">
-<h3 class="anchored" data-anchor-id="execution-engine">Execution Engine</h3>
-<p>Code is executed either with:</p>
-<ul>
-<li>Knitr: If there are <code>{r}</code> blocks. If there are also <code>{python}</code> blocks, they will be executed using the reticulate package.</li>
-<li>Jupyter: Any other code blocks (e.g.&nbsp;<code>{python}</code>, <code>{julia}</code>, <code>{bash}</code>). First executable code block determines the kernel. Other language blocks left unevaluated.</li>
-</ul>
-<p>Override engine selection with <code>engine</code>:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">engine</span><span class="kw">:</span><span class="at"> jupyter</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<!-- START CONTENT ELEMENTS -->
 </section>
-</section>
-<section id="insert-citations" class="level2">
-<h2 class="anchored" data-anchor-id="insert-citations">Insert Citations</h2>
-<p>Create citations from a bibliography file, a Zotero library, or from DOI references.</p>
-<section id="build-your-bibliography" class="level3">
-<h3 class="anchored" data-anchor-id="build-your-bibliography">Build Your Bibliography</h3>
-<ul>
-<li><p>Add BibTex or CSL bibliographies to the YAML header.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Document"</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> references.bib</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">link-citations</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>If Zotero is installed locally, your main library will automatically be available.</p></li>
-<li><p>Add citations by DOI by searching “from DOI” in the <strong>Insert Citation</strong> dialog.</p></li>
-</ul>
-</section>
-<section id="insert-citations-1" class="level3">
-<h3 class="anchored" data-anchor-id="insert-citations-1">Insert Citations</h3>
-<ul>
-<li>Access the <strong>Insert Citations</strong> dialog in the Visual Editor by clicking the <strong>@</strong> symbol in the toolbar or by clicking <strong>Insert &gt; Citation.</strong></li>
-<li>Add citations with markdown syntax by typing <code>[@cite]</code> or <code>@cite</code>.</li>
-</ul>
-</section>
-</section>
-<section id="insert-tables" class="level2">
-<h2 class="anchored" data-anchor-id="insert-tables">Insert Tables</h2>
-<p>Output data frames as tables using <code>kable(data, caption)</code>.</p>
-<pre><code>``` {{r}}
-data &lt;- faithful[1:4,]
-knitr::kable(data,
-             caption = "Tables with kable")
-```</code></pre>
-<p>Other table packages include <strong>flextable</strong>, <strong>gt</strong>, and <strong>kableExtra</strong>.</p>
 </section>
 <section id="write-with-markdown" class="level2">
 <h2 class="anchored" data-anchor-id="write-with-markdown">Write With Markdown</h2>
-<p>The syntax on the left renders as the output on the right.</p>
-<table class="table">
-<caption>Table of markdown syntax and rendered examples. The syntax in the first column renders to the output in the second column.</caption>
-<thead>
-<tr class="header">
-<th>Markdown Syntax</th>
-<th>Rendered Output</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><pre><code>Plain text.</code></pre></td>
-<td>Plain text.</td>
-</tr>
-<tr class="even">
-<td><pre><code>End a line with two spaces to
-start a new paragraph.</code></pre></td>
-<td><p>End a line with two spaces to</p>
-<p>start a new paragraph.</p></td>
-</tr>
-<tr class="odd">
-<td><pre><code>Also end a line with a backslash\
-to make a new line.</code></pre></td>
-<td><p>Also end a line with a backslash</p>
-<p>to make a new line.</p></td>
-</tr>
-<tr class="even">
-<td><pre><code>*italics* and **bold**</code></pre></td>
-<td><em>italics</em> and <strong>bold</strong></td>
-</tr>
-<tr class="odd">
-<td><pre><code>superscript^2^/subscript~2~</code></pre></td>
-<td>superscript<sup>2</sup> /subscript<sub>2</sub></td>
-</tr>
-<tr class="even">
-<td><pre><code>~~strike through~~</code></pre></td>
-<td><del>strike through</del></td>
-</tr>
-<tr class="odd">
-<td><pre><code>escaped: \* \_ \\</code></pre></td>
-<td>escaped: * _ \</td>
-</tr>
-<tr class="even">
-<td><pre><code>en dash: --, em dash: ---</code></pre></td>
-<td>en dash: –, em dash: —</td>
-</tr>
-<tr class="odd">
-<td><pre><code># Header 1</code></pre></td>
-<td><h1 id="header-1">Header 1</h1></td>
-</tr>
-<tr class="even">
-<td><pre><code>## Header 2</code></pre></td>
-<td><h2 id="header-2" class="anchored">Header 2</h2></td>
-</tr>
-<tr class="odd">
-<td><pre><code>...</code></pre></td>
-<td>…</td>
-</tr>
-<tr class="even">
-<td><pre><code>###### Header 6</code></pre></td>
-<td><h6 id="header-6" class="anchored">Header 6</h6></td>
-</tr>
-<tr class="odd">
-<td><pre><code>- unordered list
-- item 2
-    - item 2a (indent 1 tab)
-    - item 2b</code></pre></td>
-<td><ul>
-<li><p>unordered list</p></li>
-<li><p>item 2</p>
-<ul>
-<li><p>item 2a (indent 1 tab)</p></li>
-<li><p>item 2b</p></li>
-</ul></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td><pre><code>1. ordered list
-2. item 2
-  - item 2a (indent 1 tab)
-  - item 2b</code></pre></td>
-<td><ol type="1">
-<li><p>ordered list</p></li>
-<li><p>item 2</p>
-<ul>
-<li><p>item 2a</p></li>
-<li><p>item 2b</p></li>
-</ul></li>
-</ol></td>
-</tr>
-<tr class="odd">
-<td><pre><code>&lt;link url&gt;</code></pre></td>
-<td><a href="https://posit.co/" class="uri">https://posit.co/</a></td>
-</tr>
-<tr class="even">
-<td><pre><code>[This is a link.](link url)</code></pre></td>
-<td><a href="https://posit.co/">This is a link.</a></td>
-</tr>
-<tr class="odd">
-<td><pre><code>[This is another link.][id].
-
-At the end of the document:
-[id]: link url</code></pre></td>
-<td><a href="https://posit.co/">This is another link.</a></td>
-</tr>
-<tr class="even">
-<td><pre><code>![Caption](image.png)
-
-or
-
-![Caption][id2]
-
-At the end of the document include:
-[id2]: image.png</code></pre></td>
-<td>TODO Image</td>
-</tr>
-<tr class="odd">
-<td><pre><code>`verbatim code`</code></pre></td>
-<td><code>verbatim code</code></td>
-</tr>
-<tr class="even">
-<td><pre><code>```
-multiple lines
-of verbatim code
-```</code></pre></td>
-<td><pre><code>multiple lines
-of verbatim code</code></pre></td>
-</tr>
-<tr class="odd">
-<td><pre><code>&gt; block quotes</code></pre></td>
-<td><blockquote class="blockquote">
-<p>block quotes</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><pre><code>equation: $e^{i \pi} + 1 = 0$</code></pre></td>
-<td>equation: <span class="math inline">\(e^{i \pi} + 1 = 0\)</span></td>
-</tr>
-<tr class="odd">
-<td><pre><code>equation block:
-$$E = mc^{2}$$</code></pre></td>
-<td><p>equation block:</p>
-<p><span class="math display">\[
-E = mc^{2}
-\]</span></p></td>
-</tr>
-<tr class="even">
-<td><pre><code>horizontal rule:
----</code></pre></td>
-<td><p>horizontal rule:</p>
-<hr></td>
-</tr>
-<tr class="odd">
-<td><pre><code>|Right|Left|Default|Center|
-|----:|:---|-------|:----:|
-|12   |12  |12     |12    |
-|123  |123 |123    |123   |
-|1    |1   |1      |1     |
-
-Table: Caption text, example rendered table</code></pre></td>
-<td><table class="table">
-<caption>Caption text, example rendered table.</caption>
-<thead>
-<tr class="header">
-<th style="text-align: right;">Right</th>
-<th style="text-align: left;">Left</th>
-<th>Default</th>
-<th style="text-align: center;">Center</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">12</td>
-<td style="text-align: left;">12</td>
-<td>12</td>
-<td style="text-align: center;">12</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">123</td>
-<td style="text-align: left;">123</td>
-<td>123</td>
-<td style="text-align: center;">123</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">1</td>
-<td>1</td>
-<td style="text-align: center;">1</td>
-</tr>
-</tbody>
-</table></td>
-</tr>
-<tr class="even">
-<td><p>HTML Tabsets</p>
-<pre><code>::: panel-tabset
-## Plots
-text
-
-## Tables
-more text
-:::</code></pre></td>
-<td><div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Plots</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Tables</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>text</p>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>more text</p>
-</div>
-</div>
-</div></td>
-</tr>
-</tbody>
-</table>
+<p>RStudio: <strong>Help</strong> &gt; <strong>Markdown Quick Reference</strong></p>
+<p><a href="https://quarto.org/docs/authoring/markdown-basics.html" class="uri">https://quarto.org/docs/authoring/markdown-basics.html</a></p>
+<p>Or use <strong>Visual Editor</strong></p>
 </section>
-<section id="callouts" class="level2">
-<h2 class="anchored" data-anchor-id="callouts">Callouts</h2>
-</section>
-<section id="layout" class="level2">
-<h2 class="anchored" data-anchor-id="layout">Layout</h2>
-</section>
-<section id="diagrams" class="level2">
-<h2 class="anchored" data-anchor-id="diagrams">Diagrams</h2>
-</section>
-<section id="equations" class="level2">
-<h2 class="anchored" data-anchor-id="equations">Equations</h2>
-</section>
-<section id="html-theming" class="level2">
-<h2 class="anchored" data-anchor-id="html-theming">HTML Theming</h2>
-</section>
-<section id="font" class="level2">
-<h2 class="anchored" data-anchor-id="font">Font</h2>
-</section>
-<section id="include-figures" class="level2">
-<h2 class="anchored" data-anchor-id="include-figures">Include Figures</h2>
+<section id="figures" class="level2">
+<h2 class="anchored" data-anchor-id="figures">Figures</h2>
 <section id="markdown" class="level3">
 <h3 class="anchored" data-anchor-id="markdown">Markdown</h3>
-<div class="sourceCode" id="cb46"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="al">![CAPTION](image.png)</span>{#fig-LABEL fig-alt="ALT TEXT"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="al">![CAPTION](image.png)</span>{#fig-LABEL fig-alt="ALT TEXT"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="computation" class="level3">
 <h3 class="anchored" data-anchor-id="computation">Computation</h3>
-<div class="sourceCode" id="cb47"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-LABEL</span></span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: CAPTION</span></span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-alt: ALT TEXT</span></span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>{{ plot code here }}</span>
-<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-LABEL</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: CAPTION</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-alt: ALT TEXT</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>{{ plot code here }}</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="tables-1" class="level2">
-<h2 class="anchored" data-anchor-id="tables-1">Tables</h2>
+<section id="tables" class="level2">
+<h2 class="anchored" data-anchor-id="tables">Tables</h2>
 <section id="markdown-1" class="level3">
 <h3 class="anchored" data-anchor-id="markdown-1">Markdown</h3>
-<div class="sourceCode" id="cb48"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>|object | radius|</span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>|:------|------:|</span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>|Sun    | 696000|</span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>|Earth  |   6371|</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>|object | radius|</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>|:------|------:|</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>|Sun    | 696000|</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>|Earth  |   6371|</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="computation-1" class="level3">
 <h3 class="anchored" data-anchor-id="computation-1">Computation</h3>
 <p>Output a markdown table or an HTML table (regardless of your format) from your code.</p>
-<p>R <code>knitr::kable()</code></p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-LABEL</span></span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: CAPTION</span></span>
-<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(cars))</span>
-<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<section id="knitr-1" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<h4 class="anchored" data-anchor-id="knitr-1">Knitr</h4>
+<p>Use <code>knitr::kable()</code> to produce markdown:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-LABEL</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: CAPTION</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(cars))</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Also see the R packages: gt, flextable, kableExtra.</p>
-<p>Combine <code>Markdown()</code> with a function that outputs markdown</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-LABEL</span></span>
-<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: CAPTION</span></span>
-<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tabulate <span class="im">import</span> tabulate</span>
-<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> [[<span class="st">"Sun"</span>,<span class="st">"696,000"</span>,<span class="fl">1.989e30</span>],</span>
-<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>         [<span class="st">"Earth"</span>,<span class="st">"6,371"</span>,<span class="fl">5.972e24</span>]]</span>
-<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>Markdown(tabulate(table, tablefmt<span class="op">=</span><span class="st">'html'</span>))</span>
-<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<!-- Could include raw HTML syntax here too... -->
-<!-- Page 2 -->
 </section>
+<section id="jupyter-1" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<h4 class="anchored" data-anchor-id="jupyter-1">Jupyter</h4>
+<p>Combine <code>Markdown()</code> with a function that outputs markdown:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-LABEL</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: CAPTION</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tabulate <span class="im">import</span> tabulate</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> [[<span class="st">"Sun"</span>,<span class="st">"696,000"</span>,<span class="fl">1.989e30</span>],</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>         [<span class="st">"Earth"</span>,<span class="st">"6,371"</span>,<span class="fl">5.972e24</span>]]</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>Markdown(tabulate(table, tablefmt<span class="op">=</span><span class="st">'html'</span>))</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</div>
+</div>
+<!-- Could include raw HTML syntax here too... -->
+</section>
+</section>
+<section id="cross-references" class="level2">
+<h2 class="anchored" data-anchor-id="cross-references">Cross References</h2>
+<ol type="1">
+<li><p>Add labels:</p>
+<ul>
+<li><p><strong>Code cell:</strong></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: prefix-LABEL</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Markdown:</strong> add attribute <code>#prefix-LABEL</code></p></li>
+</ul></li>
+<li><p>Add references: <code>@prefix-LABEL</code>, e.g.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>You can see in @fig-scatterplot, that...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ol>
+<table class="table">
+<thead>
+<tr class="header">
+<th><code>prefix</code></th>
+<th>Renders</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>fig-</code></td>
+<td>Figure 1</td>
+</tr>
+<tr class="even">
+<td><code>tbl-</code></td>
+<td>Table 1</td>
+</tr>
+<tr class="odd">
+<td><code>eq-</code></td>
+<td>Equation 1</td>
+</tr>
+<tr class="even">
+<td><code>sec-</code></td>
+<td>Section 1</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="citations" class="level2">
+<h2 class="anchored" data-anchor-id="citations">Citations</h2>
+<ol type="1">
+<li><p>Add bibliography file to the YAML header:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Document"</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> references.bib</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Add citations: <code>[@citation]</code>, or <code>@citation</code></p></li>
+</ol>
+<p><strong>Insert Citations</strong> dialog in the Visual Editor:</p>
+<ul>
+<li><p>Build your bibliography file from your Zotero library, DOI, Crossref, DataCite, or PubMed</p></li>
+<li><p>Generate citation markdown syntax</p></li>
+</ul>
+</section>
+<section id="callouts" class="level2">
+<h2 class="anchored" data-anchor-id="callouts">Callouts</h2>
+<div class="sourceCode" id="cb19"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## Title</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>Text</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Instead of <code>tip</code> use one of: <code>note</code>, <code>caution</code>, <code>warning</code>, or <code>important</code>:</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</section>
+<section id="shortcodes" class="level2">
+<h2 class="anchored" data-anchor-id="shortcodes">Shortcodes</h2>
+<p>Include the contents of <code>_file.qmd</code> in document:</p>
+<div class="sourceCode" id="cb20" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>{{&lt; include _file.qmd &gt;}} </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Embed the code cell labelled <code>fig-LABEL</code> from the file <code>notebook.ipynb</code> in the document:</p>
+<div class="sourceCode" id="cb21" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>{{&lt; embed notebook.ipynb#fig-LABEL &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Embed a video in the document. Can also be a link to YouTube, or Vimeo:</p>
+<div class="sourceCode" id="cb22" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>{{&lt; video local-video.mp4 &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Insert a format appropriate pagebreak:</p>
+<div class="sourceCode" id="cb23" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>{{&lt; pagebreak &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Include the value of the option <code>title</code> set in the document metadata. Also see <code>var</code> and <code>env</code> shortcodes:</p>
+<div class="sourceCode" id="cb24" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>{{&lt; meta title &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="layout" class="level2">
+<h2 class="anchored" data-anchor-id="layout">Layout</h2>
+<p>Use the <code>layout-ncol</code> and <code>layout-nrow</code> attributes to arrange content in a grid:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>:::: {layout-ncol=2}</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>::: {}</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>Left </span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>::: {}</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>Right</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Use <code>layout</code> for more complicated arrangements:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>:::: {layout="[<span class="co">[</span><span class="ot">1, 1</span><span class="co">]</span>, <span class="co">[</span><span class="ot">1</span><span class="co">]</span>]"}</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>::: {}</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>Top Left </span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>::: {}</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>Top Right</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>::: {}</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>Bottom</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Use <code>layout-ncol</code>, <code>layout-nrow</code>, <code>layout</code> as code chunk options.</p>
+<!-- END CONTENT ELEMENTS -->
 </section>
 <section id="set-output-formats-and-their-options-in-yaml" class="level2">
 <h2 class="anchored" data-anchor-id="set-output-formats-and-their-options-in-yaml">Set Output Formats and Their Options in YAML</h2>
+<p>Common values for <code>format</code>: html, pdf<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, docx, odt, rtf, gfm, pptx, revealjs, beamer<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <section id="single-output-default-options" class="level3 quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <h3 class="anchored" data-anchor-id="single-output-default-options">Single output, default options:</h3>
-<div class="sourceCode" id="cb51"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Document"</span></span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Author Name"</span></span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
-<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Document"</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Author Name"</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="single-output-set-options" class="level3 quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <h3 class="anchored" data-anchor-id="single-output-set-options">Single output, set options:</h3>
-<div class="sourceCode" id="cb52"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Document"</span></span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Author Name"</span></span>
-<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">code-fold</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="sourceCode" id="cb30"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Document"</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Author Name"</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">code-fold</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Indent format two spaces</li>
 <li>Indent options four spaces</li>
 </ul>
-</div>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
+</section>
 <section id="multiple-outputs" class="level3 quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <h3 class="anchored" data-anchor-id="multiple-outputs">Multiple outputs:</h3>
 <p>Use <code>quarto render</code> on command line or <strong>Render All</strong></p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Document"</span></span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Author Name"</span></span>
-<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">code-fold</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span><span class="at"> default</span></span>
-<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Document"</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Author Name"</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">code-fold</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Top-level options apply to all formats</li>
 </ul>
 </section>
 </div>
 </div>
-<section id="output-format-table" class="level3">
-<h3 class="anchored" data-anchor-id="output-format-table">Output Format Table</h3>
-<table class="table">
-<caption>Table of output formats. The output format in the first column creates the file type in the second column.</caption>
-<thead>
-<tr class="header">
-<th>Format</th>
-<th>Creates</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>html</td>
-<td>HTML</td>
-</tr>
-<tr class="even">
-<td>pdf<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></td>
-<td>PDF</td>
-</tr>
-<tr class="odd">
-<td>docx</td>
-<td>Microsoft Word</td>
-</tr>
-<tr class="even">
-<td>odt</td>
-<td>OpenDocument Text</td>
-</tr>
-<tr class="odd">
-<td>rtf</td>
-<td>Rich Text Format</td>
-</tr>
-<tr class="even">
-<td>gfm</td>
-<td>Markdown for Github</td>
-</tr>
-<tr class="odd">
-<td>pptx</td>
-<td>Microsoft PowerPoint (.pptx) slides</td>
-</tr>
-<tr class="even">
-<td>revealjs</td>
-<td>revealjs HTML slides</td>
-</tr>
-<tr class="odd">
-<td>beamer<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></td>
-<td>Beamer slides</td>
-</tr>
-</tbody>
-</table>
-</section>
 <section id="output-options-table" class="level3">
 <h3 class="anchored" data-anchor-id="output-options-table">Output Options Table</h3>
-<table class="table">
-<caption>Table of output options. The first column is the option name, the second column is the description and possible values, and then remaining columns show what file types each option can be applied to.</caption>
-<colgroup>
-<col style="width: 23%">
-<col style="width: 61%">
-<col style="width: 2%">
-<col style="width: 2%">
-<col style="width: 3%">
-<col style="width: 3%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Important Options</th>
-<th>Description</th>
-<th>HTML</th>
-<th>PDF</th>
-<th>MS Word</th>
-<th>MS PPT</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>anchor-sections</td>
-<td>Show section anchors on mouse hover (<code>true</code> or <code>false</code>)</td>
-<td>X</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>cite-method</td>
-<td>Method used to format citations (<code>citeproc</code>, <code>natbib</code>, <code>biblatex</code>)</td>
-<td></td>
-<td>X</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>code-tools</td>
-<td>Include a code tools menu for hiding, showing, and downloading code) (<code>true</code> or <code>false</code>; use sub-properties <code>source</code>, <code>toggle</code>, and <code>caption</code> to customize)</td>
-<td>X</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>code-fold</td>
-<td>Let readers toggle the display of R code (<code>false</code>, <code>true</code>, or <code>show</code>)</td>
-<td>X</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>css</td>
-<td>CSS or SCSS file to use to style the document (e.g.&nbsp;“style.css”)</td>
-<td>X</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>fig-format</td>
-<td>Default format for figures generated by Matplotlib or R graphics (<code>retina</code>, <code>png</code>, <code>jpeg</code>, <code>svg</code>, or <code>pdf</code>)</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-</tr>
-<tr class="odd">
-<td>df-print</td>
-<td>Method for printing data frames (<code>default</code>, <code>kable</code>, <code>tibble</code>, <code>paged</code>)</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-</tr>
-<tr class="even">
-<td>highlight-style</td>
-<td>Syntax highlighting (e.g.&nbsp;<code>arrow</code>, <code>pygments</code>, <code>kate</code>, <code>zenburn</code>)</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>include-in-header, include-before-body, include-after-body</td>
-<td>Files of content to include in output document</td>
-<td>X</td>
-<td>X</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>keep-md</td>
-<td>Keep the Markdown .md file generated by knitting (<code>true</code> or <code>false</code>)</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-</tr>
-<tr class="odd">
-<td>keep-tex</td>
-<td>Keep the intermediate TEX file used to convert to PDF (<code>true</code> or <code>false</code>)</td>
-<td></td>
-<td>X</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>pdf-engine</td>
-<td>LaTeX engine for producing PDF output (<code>xelatex</code>, <code>pdflatex</code>, <code>lualatex</code>)</td>
-<td></td>
-<td>X</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>reference-doc</td>
-<td>docx/pptx file containing styles to copy in the output (e.g.&nbsp;<code>file.docx</code>, <code>file.pptx</code>)</td>
-<td></td>
-<td></td>
-<td>X</td>
-<td>X</td>
-</tr>
-<tr class="even">
-<td>theme</td>
-<td>Theme options (see Bootswatch and Custom Themes below)</td>
-<td>X</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>toc</td>
-<td>Add a table of contents at start of document (<code>true</code> or <code>false</code>)</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-</tr>
-<tr class="even">
-<td>toc-depth</td>
-<td>The lowest level of headings to add to table of contents (e.g.&nbsp;2, 3)</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-</tr>
-</tbody>
+<div class="cell">
+<div class="cell-output-display">
+
+<div id="rzjkmcvmdd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rzjkmcvmdd table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#rzjkmcvmdd thead, #rzjkmcvmdd tbody, #rzjkmcvmdd tfoot, #rzjkmcvmdd tr, #rzjkmcvmdd td, #rzjkmcvmdd th {
+  border-style: none;
+}
+
+#rzjkmcvmdd p {
+  margin: 0;
+  padding: 0;
+}
+
+#rzjkmcvmdd .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#rzjkmcvmdd .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#rzjkmcvmdd .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#rzjkmcvmdd .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#rzjkmcvmdd .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#rzjkmcvmdd .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rzjkmcvmdd .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#rzjkmcvmdd .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#rzjkmcvmdd .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#rzjkmcvmdd .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#rzjkmcvmdd .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#rzjkmcvmdd .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#rzjkmcvmdd .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#rzjkmcvmdd .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#rzjkmcvmdd .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#rzjkmcvmdd .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#rzjkmcvmdd .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#rzjkmcvmdd .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#rzjkmcvmdd .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rzjkmcvmdd .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#rzjkmcvmdd .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#rzjkmcvmdd .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#rzjkmcvmdd .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rzjkmcvmdd .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#rzjkmcvmdd .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#rzjkmcvmdd .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rzjkmcvmdd .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rzjkmcvmdd .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#rzjkmcvmdd .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rzjkmcvmdd .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#rzjkmcvmdd .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rzjkmcvmdd .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#rzjkmcvmdd .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rzjkmcvmdd .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#rzjkmcvmdd .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rzjkmcvmdd .gt_left {
+  text-align: left;
+}
+
+#rzjkmcvmdd .gt_center {
+  text-align: center;
+}
+
+#rzjkmcvmdd .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#rzjkmcvmdd .gt_font_normal {
+  font-weight: normal;
+}
+
+#rzjkmcvmdd .gt_font_bold {
+  font-weight: bold;
+}
+
+#rzjkmcvmdd .gt_font_italic {
+  font-style: italic;
+}
+
+#rzjkmcvmdd .gt_super {
+  font-size: 65%;
+}
+
+#rzjkmcvmdd .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#rzjkmcvmdd .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#rzjkmcvmdd .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#rzjkmcvmdd .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#rzjkmcvmdd .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#rzjkmcvmdd .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#rzjkmcvmdd .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false"><caption><p>Important Options. The first column is the option name, the second
+column is the description and possible values, and then remaining
+columns show what file types each option can be applied to, and whether
+it can also be used as a code cell option.</p></caption>
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Option">Option</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Description">Description</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="html/revealjs">html/revealjs</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="pdf/beamer">pdf/beamer</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="docx/pptx">docx/pptx</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="cell level?">cell level?</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr class="gt_group_heading_row">
+      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Navigation">Navigation</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Navigation  Option" class="gt_row gt_left">toc</td>
+<td headers="Navigation  Description" class="gt_row gt_left">Add a table of contents (true or false)</td>
+<td headers="Navigation  html/revealjs" class="gt_row gt_left">X</td>
+<td headers="Navigation  pdf/beamer" class="gt_row gt_left">X</td>
+<td headers="Navigation  docx/pptx" class="gt_row gt_left">X</td>
+<td headers="Navigation  cell level?" class="gt_row gt_left"></td></tr>
+    <tr><td headers="Navigation  Option" class="gt_row gt_left">toc-depth</td>
+<td headers="Navigation  Description" class="gt_row gt_left">Lowest level of headings to add to table of contents (e.g. 2, 3)</td>
+<td headers="Navigation  html/revealjs" class="gt_row gt_left">X</td>
+<td headers="Navigation  pdf/beamer" class="gt_row gt_left">X</td>
+<td headers="Navigation  docx/pptx" class="gt_row gt_left">X</td>
+<td headers="Navigation  cell level?" class="gt_row gt_left"></td></tr>
+    <tr><td headers="Navigation  Option" class="gt_row gt_left">anchor-sections</td>
+<td headers="Navigation  Description" class="gt_row gt_left">Show section anchors on mouse hover (true or false)</td>
+<td headers="Navigation  html/revealjs" class="gt_row gt_left">X</td>
+<td headers="Navigation  pdf/beamer" class="gt_row gt_left"></td>
+<td headers="Navigation  docx/pptx" class="gt_row gt_left"></td>
+<td headers="Navigation  cell level?" class="gt_row gt_left"></td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Style">Style</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Style  Option" class="gt_row gt_left">highlight-style</td>
+<td headers="Style  Description" class="gt_row gt_left">Syntax highlighting (e.g. arrow, pygments, kate, zenburn)</td>
+<td headers="Style  html/revealjs" class="gt_row gt_left">X</td>
+<td headers="Style  pdf/beamer" class="gt_row gt_left">X</td>
+<td headers="Style  docx/pptx" class="gt_row gt_left">X</td>
+<td headers="Style  cell level?" class="gt_row gt_left"></td></tr>
+    <tr><td headers="Style  Option" class="gt_row gt_left">mainfont, monofont</td>
+<td headers="Style  Description" class="gt_row gt_left">Set CSS `font-family` for HTML, uses fontspec package for LaTeX</td>
+<td headers="Style  html/revealjs" class="gt_row gt_left">X</td>
+<td headers="Style  pdf/beamer" class="gt_row gt_left">X</td>
+<td headers="Style  docx/pptx" class="gt_row gt_left"></td>
+<td headers="Style  cell level?" class="gt_row gt_left"></td></tr>
+    <tr><td headers="Style  Option" class="gt_row gt_left">theme</td>
+<td headers="Style  Description" class="gt_row gt_left">Provide  Bootswatch theme name (e.g. cosmo, darkly, solar etc.)</td>
+<td headers="Style  html/revealjs" class="gt_row gt_left">X</td>
+<td headers="Style  pdf/beamer" class="gt_row gt_left"></td>
+<td headers="Style  docx/pptx" class="gt_row gt_left"></td>
+<td headers="Style  cell level?" class="gt_row gt_left"></td></tr>
+    <tr><td headers="Style  Option" class="gt_row gt_left">css</td>
+<td headers="Style  Description" class="gt_row gt_left">CSS or SCSS file to use to style the document (e.g. "style.css")</td>
+<td headers="Style  html/revealjs" class="gt_row gt_left">X</td>
+<td headers="Style  pdf/beamer" class="gt_row gt_left"></td>
+<td headers="Style  docx/pptx" class="gt_row gt_left"></td>
+<td headers="Style  cell level?" class="gt_row gt_left"></td></tr>
+    <tr><td headers="Style  Option" class="gt_row gt_left">reference-doc</td>
+<td headers="Style  Description" class="gt_row gt_left">docx/pptx file containing template styles (e.g. file.docx, file.pptx)</td>
+<td headers="Style  html/revealjs" class="gt_row gt_left"></td>
+<td headers="Style  pdf/beamer" class="gt_row gt_left"></td>
+<td headers="Style  docx/pptx" class="gt_row gt_left">X</td>
+<td headers="Style  cell level?" class="gt_row gt_left"></td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="6" class="gt_group_heading" scope="colgroup" id="NA">NA</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="NA  Option" class="gt_row gt_left">include-in-header, include-before-body, include-after-body</td>
+<td headers="NA  Description" class="gt_row gt_left">Files of content to include in output document</td>
+<td headers="NA  html/revealjs" class="gt_row gt_left">X</td>
+<td headers="NA  pdf/beamer" class="gt_row gt_left">X</td>
+<td headers="NA  docx/pptx" class="gt_row gt_left"></td>
+<td headers="NA  cell level?" class="gt_row gt_left"></td></tr>
+    <tr><td headers="NA  Option" class="gt_row gt_left">keep-md, keep-tex, keep-ipynb</td>
+<td headers="NA  Description" class="gt_row gt_left">Keep intermediate files (true or false)</td>
+<td headers="NA  html/revealjs" class="gt_row gt_left">X</td>
+<td headers="NA  pdf/beamer" class="gt_row gt_left">X</td>
+<td headers="NA  docx/pptx" class="gt_row gt_left">X</td>
+<td headers="NA  cell level?" class="gt_row gt_left"></td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="6" class="gt_group_heading" scope="colgroup" id="LaTeX">LaTeX</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="LaTeX  Option" class="gt_row gt_left">documentclass, classoption</td>
+<td headers="LaTeX  Description" class="gt_row gt_left">Set document class and its options</td>
+<td headers="LaTeX  html/revealjs" class="gt_row gt_left"></td>
+<td headers="LaTeX  pdf/beamer" class="gt_row gt_left">X</td>
+<td headers="LaTeX  docx/pptx" class="gt_row gt_left"></td>
+<td headers="LaTeX  cell level?" class="gt_row gt_left"></td></tr>
+    <tr><td headers="LaTeX  Option" class="gt_row gt_left">pdf-engine</td>
+<td headers="LaTeX  Description" class="gt_row gt_left">LaTeX engine to produce PDF output (xelatex, pdflatex, lualatex)</td>
+<td headers="LaTeX  html/revealjs" class="gt_row gt_left"></td>
+<td headers="LaTeX  pdf/beamer" class="gt_row gt_left">X</td>
+<td headers="LaTeX  docx/pptx" class="gt_row gt_left"></td>
+<td headers="LaTeX  cell level?" class="gt_row gt_left"></td></tr>
+    <tr><td headers="LaTeX  Option" class="gt_row gt_left">cite-method</td>
+<td headers="LaTeX  Description" class="gt_row gt_left">Method used to format citations (citeproc, natbib, biblatex)</td>
+<td headers="LaTeX  html/revealjs" class="gt_row gt_left"></td>
+<td headers="LaTeX  pdf/beamer" class="gt_row gt_left">X</td>
+<td headers="LaTeX  docx/pptx" class="gt_row gt_left"></td>
+<td headers="LaTeX  cell level?" class="gt_row gt_left"></td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Code">Code</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Code  Option" class="gt_row gt_left">code-fold</td>
+<td headers="Code  Description" class="gt_row gt_left">Let readers toggle the display of R code (false, true, or show)</td>
+<td headers="Code  html/revealjs" class="gt_row gt_left">X</td>
+<td headers="Code  pdf/beamer" class="gt_row gt_left"></td>
+<td headers="Code  docx/pptx" class="gt_row gt_left"></td>
+<td headers="Code  cell level?" class="gt_row gt_left">X</td></tr>
+    <tr><td headers="Code  Option" class="gt_row gt_left">code-tools</td>
+<td headers="Code  Description" class="gt_row gt_left">Add menu for hiding, showing, and downloading code (true or false)</td>
+<td headers="Code  html/revealjs" class="gt_row gt_left">X</td>
+<td headers="Code  pdf/beamer" class="gt_row gt_left"></td>
+<td headers="Code  docx/pptx" class="gt_row gt_left"></td>
+<td headers="Code  cell level?" class="gt_row gt_left"></td></tr>
+    <tr><td headers="Code  Option" class="gt_row gt_left">code-overflow</td>
+<td headers="Code  Description" class="gt_row gt_left">Display of wide code (scroll, or wrap)</td>
+<td headers="Code  html/revealjs" class="gt_row gt_left">X</td>
+<td headers="Code  pdf/beamer" class="gt_row gt_left"></td>
+<td headers="Code  docx/pptx" class="gt_row gt_left"></td>
+<td headers="Code  cell level?" class="gt_row gt_left">X</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Figures">Figures</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Figures  Option" class="gt_row gt_left">fig-align</td>
+<td headers="Figures  Description" class="gt_row gt_left">Alignment of figures (default, left, right, center)</td>
+<td headers="Figures  html/revealjs" class="gt_row gt_left">X</td>
+<td headers="Figures  pdf/beamer" class="gt_row gt_left">X</td>
+<td headers="Figures  docx/pptx" class="gt_row gt_left">docx only</td>
+<td headers="Figures  cell level?" class="gt_row gt_left">X</td></tr>
+    <tr><td headers="Figures  Option" class="gt_row gt_left">fig-width, fig-height</td>
+<td headers="Figures  Description" class="gt_row gt_left">Set default width and height for figures</td>
+<td headers="Figures  html/revealjs" class="gt_row gt_left">X</td>
+<td headers="Figures  pdf/beamer" class="gt_row gt_left">X</td>
+<td headers="Figures  docx/pptx" class="gt_row gt_left">X</td>
+<td headers="Figures  cell level?" class="gt_row gt_left">Knitr only</td></tr>
+    <tr><td headers="Figures  Option" class="gt_row gt_left">fig-format</td>
+<td headers="Figures  Description" class="gt_row gt_left">Format for Matplotlib or R figures (retina, png, jpeg, svg, or pdf)</td>
+<td headers="Figures  html/revealjs" class="gt_row gt_left">X</td>
+<td headers="Figures  pdf/beamer" class="gt_row gt_left">X</td>
+<td headers="Figures  docx/pptx" class="gt_row gt_left">X</td>
+<td headers="Figures  cell level?" class="gt_row gt_left"></td></tr>
+    <tr><td headers="Figures  Option" class="gt_row gt_left">fig-env</td>
+<td headers="Figures  Description" class="gt_row gt_left">LaTeX environment for figure output</td>
+<td headers="Figures  html/revealjs" class="gt_row gt_left"></td>
+<td headers="Figures  pdf/beamer" class="gt_row gt_left">X</td>
+<td headers="Figures  docx/pptx" class="gt_row gt_left"></td>
+<td headers="Figures  cell level?" class="gt_row gt_left">X</td></tr>
+    <tr><td headers="Figures  Option" class="gt_row gt_left">fig-pos</td>
+<td headers="Figures  Description" class="gt_row gt_left">LaTeX figure position used in \begin{figure}[].</td>
+<td headers="Figures  html/revealjs" class="gt_row gt_left"></td>
+<td headers="Figures  pdf/beamer" class="gt_row gt_left">X</td>
+<td headers="Figures  docx/pptx" class="gt_row gt_left"></td>
+<td headers="Figures  cell level?" class="gt_row gt_left">X</td></tr>
+  </tbody>
+  
+  
 </table>
+</div>
+</div>
+</div>
 <p>Visit <a href="https://quarto.org/docs/reference/" class="uri">https://quarto.org/docs/reference/</a> to see all of a format’s options</p>
 </section>
 </section>
-<section id="more-header-options" class="level2">
-<h2 class="anchored" data-anchor-id="more-header-options">More Header Options</h2>
-<section id="parameters" class="level3">
-<h3 class="anchored" data-anchor-id="parameters">Parameters</h3>
+<section id="quarto-projects" class="level2">
+<h2 class="anchored" data-anchor-id="quarto-projects">Quarto Projects</h2>
+<p>A collection of Quarto documents and a configuration file, <code>_quarto.yml</code></p>
+<p>Websites, blogs, books, and more…</p>
+<p>Get started from the command line:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Terminal</strong></pre>
+</div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> create project {type}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Or RStudio: New Project</p>
+<p><code>{type}</code>: website, blog, book, confluence</p>
+</section>
+<section id="quarto-commands" class="level2">
+<h2 class="anchored" data-anchor-id="quarto-commands">Quarto Commands</h2>
+<p>Quarto is a command line tool. Run commands in the Terminal. Add <code>--help</code> to get more information.</p>
+<table class="table">
+<colgroup>
+<col style="width: 55%">
+<col style="width: 44%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>The <strong>Render</strong> button is like:</td>
+<td><div class="sourceCode" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview document.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+</tr>
+<tr class="even">
+<td>Render all formats:</td>
+<td><div class="sourceCode" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render document.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+</tr>
+<tr class="odd">
+<td>Render to a specific format:</td>
+<td><div class="sourceCode" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render document.qmd <span class="at">--to</span> pdf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+</tr>
+<tr class="even">
+<td>Render a project:</td>
+<td><div class="sourceCode" id="cb36"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+</tr>
+<tr class="odd">
+<td>Install tinytex, recommended for PDF output:</td>
+<td><div class="sourceCode" id="cb37"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> install tinytex</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+</tr>
+<tr class="even">
+<td>Publish a document:</td>
+<td><div class="sourceCode" id="cb38"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish {venue} document.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+</tr>
+<tr class="odd">
+<td>Publish a project:</td>
+<td><div class="sourceCode" id="cb39"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish {venue}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+</tr>
+<tr class="even">
+<td>Diagnostics on Quarto and rendering engines:</td>
+<td><div class="sourceCode" id="cb40"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="parameters" class="level2">
+<h2 class="anchored" data-anchor-id="parameters">Parameters</h2>
 <p>Parameterize your documents to reuse with new inputs (e.g.&nbsp;data, values, etc.).</p>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<section id="knitr-1" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<h4 class="anchored" data-anchor-id="knitr-1">knitr</h4>
+<section id="knitr-2" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<h4 class="anchored" data-anchor-id="knitr-2">knitr</h4>
 <ol type="1">
 <li><p><strong>Add parameters</strong> in the header as sub-values of <code>params</code>:</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">params</span><span class="kw">:</span></span>
-<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">state</span><span class="kw">:</span><span class="at"> </span><span class="st">"hawaii"</span></span>
-<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb41"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">params</span><span class="kw">:</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">state</span><span class="kw">:</span><span class="at"> </span><span class="st">"hawaii"</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p><strong>Call parameters</strong> in code using <code>params$name</code>:</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>params<span class="sc">$</span>state</span>
-<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb42"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>params<span class="sc">$</span>state</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
 </section>
-<section id="jupyter" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<h4 class="anchored" data-anchor-id="jupyter">jupyter</h4>
+<section id="jupyter-2" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<h4 class="anchored" data-anchor-id="jupyter-2">jupyter</h4>
 <ol type="1">
 <li><p><strong>Add parameters</strong> to a code cell tagged <code>parameters</code>:</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: [parameters]</span></span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>state <span class="op">=</span> <span class="st">"hawaii"</span></span>
-<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb43"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: [parameters]</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>state <span class="op">=</span> <span class="st">"hawaii"</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p><strong>Call parameters</strong> in code:</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>state</span>
-<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb44"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>state</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
 </section>
 </div>
@@ -1216,43 +1553,29 @@ more text
 <div class="code-with-filename-file">
 <pre><strong>Terminal</strong></pre>
 </div>
-<div class="sourceCode" id="cb60"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render report.qmd <span class="at">-P</span> state:<span class="st">"colorado"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render report.qmd <span class="at">-P</span> state:<span class="st">"colorado"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-</section>
-<section id="publishing" class="level2">
-<h2 class="anchored" data-anchor-id="publishing">Publishing</h2>
-</section>
-<section id="share" class="level2">
-<h2 class="anchored" data-anchor-id="share">Share</h2>
-<p><strong>Publish on Quarto Pubs</strong></p>
-<p><strong>Publish on Posit Connect</strong> to share Quarto documents securely, schedule automatic updates, and interact with parameters in real time. <a href="https://posit.co/products/enterprise/connect/" class="uri">https://posit.co/products/enterprise/connect/</a>.</p>
-</section>
-<section id="quarto-projects" class="level2">
-<h2 class="anchored" data-anchor-id="quarto-projects">Quarto Projects</h2>
-<p>A collection of Quarto documents and a configuration file, <code>_quarto.yml</code></p>
-<p>Websites, blogs, books, manuscripts and more…</p>
-<p>Get started from the command line:</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Terminal</strong></pre>
-</div>
-<div class="sourceCode" id="cb61"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> create project {type}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Or RStudio: New Project</p>
-<p><code>{type}</code>: website, blog, manuscript, book, confluence</p>
 </section>
 <section id="interactivity" class="level2">
-<h2 class="anchored" data-anchor-id="interactivity">Interactivity</h2>
+<h2 class="anchored" data-anchor-id="interactivity">Interactivity?</h2>
 </section>
 <section id="extensions" class="level2">
-<h2 class="anchored" data-anchor-id="extensions">Extensions</h2>
+<h2 class="anchored" data-anchor-id="extensions">Extensions?</h2>
+<p>Shortcodes, Filters, Journal Article Templates</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> use</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+<p>CC BY SA Posit Software, PBC • <a href="mailto:info@posit.co">info@posit.co</a> • <a href="https://posit.co">posit.co</a></p>
+<p>Learn more at <a href="https://quarto.org">quarto.org</a>.</p>
+<p>Quarto 1.3</p>
+<p>Updated: 2023-07.</p>
+<hr>
 
 
 </section>
 
 
-<div id="quarto-appendix" class="default"><aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
 <li id="fn1"><p>PDFs and Beamer slides require LaTeX, use:</p>
@@ -1260,7 +1583,7 @@ more text
 <div class="code-with-filename-file">
 <pre><strong>Terminal</strong></pre>
 </div>
-<div class="sourceCode" id="cb54"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> install tinytex</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> install tinytex</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></li>
 <li id="fn2"><p>PDFs and Beamer slides require LaTeX, use:</p>
@@ -1268,11 +1591,11 @@ more text
 <div class="code-with-filename-file">
 <pre><strong>Terminal</strong></pre>
 </div>
-<div class="sourceCode" id="cb55"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> install tinytex</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> install tinytex</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></li>
 </ol>
-</aside></div></main> <!-- /main -->
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1352,9 +1675,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1364,17 +1688,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1387,81 +1702,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
-        }
-        return container.innerHTML
-      } else {
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      return note.innerHTML;
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      }
-    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1505,7 +1745,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
-            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1591,7 +1830,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-
 
 
 
