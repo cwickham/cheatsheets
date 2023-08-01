@@ -849,135 +849,72 @@
   {
     "objectID": "html/quarto.html",
     "href": "html/quarto.html",
-    "title": "quarto :: Cheatsheet",
+    "title": "Publish and Share with Quarto :: Cheatsheet",
     "section": "",
     "text": "PDF Coming Soon..."
   },
   {
-    "objectID": "html/quarto.html#what-is-quarto",
-    "href": "html/quarto.html#what-is-quarto",
-    "title": "quarto :: Cheatsheet",
-    "section": "What is Quarto?",
-    "text": "What is Quarto?\nQuarto is an open-source scientific and technical publishing system:\n\nCreate dynamic content with Python, R, Julia, and Observable.\nPublish reproducible, production quality articles, presentations, websites, blogs, and books in HTML, PDF, MS Word, ePub, and more.\nShare knowledge and insights organization-wide by publishing to Posit Connect, Confluence, or other publishing systems.\n\nGet Quarto from: https://quarto.org/docs/download/\nOr, use version bundled with RStudio."
+    "objectID": "html/quarto.html#overview",
+    "href": "html/quarto.html#overview",
+    "title": "Publish and Share with Quarto :: Cheatsheet",
+    "section": "Overview",
+    "text": "Overview\n1\n\nAuthor: Write and code in plain text. Author documents as .qmd files, or Jupyter notebooks. Write in a rich Markdown syntax.\nRender: Generate documents, presentations and more. Produce HTML, PDF, MS Word, reveal.js, MS Powerpoint, Beamer, websites, blogs, books…\nShare: Share your work with the world. Quickly deploy to GitHub Pages, Netlify, Quarto Pub, Posit Cloud, or Posit Connect.\n\n\nGet Quarto\nGet Quarto from: https://quarto.org/docs/download/\nOr, use version bundled with RStudio.\n\n\nGet Started\nhttps://quarto.org/docs/get-started"
   },
   {
-    "objectID": "html/quarto.html#workflow",
-    "href": "html/quarto.html#workflow",
-    "title": "quarto :: Cheatsheet",
-    "section": "Workflow",
-    "text": "Workflow\n\nAuthor\n(Screenshot of .qmd in source editor)\nHighlight:\n\n.qmd: plain text, use any text editor\nYAML Header\n\nSet Output Format(s) and Options\n\nMarkdown\n\nWrite Text\n\nCode cells\n\nEmbed Code\n\n\n\nAuthoring Tools\nRich authoring experience in:\n\nRStudio\nVS Code with the Quarto extension (quarto-vscode)\n\nIs this useful? Maybe as a Useful Shortcuts table, and use general language for command.\n\n\n\n\n\n\n\n\n\n\nRStudio\nShortcut\n\n\n\n\nCreate a new Quarto document\n\n\n\nRender Current Document\n\n\n\nInsert a new code chunk\n\n\n\nRun current code chunk\n\n\n\nRun all chunks above the current chunk\n\n\n\nRestart R Session and Run All Chunks\n\n\n\n\n\n\n\n\n\n\n\n\n\nVS Code\nShortcut\n\n\n\n\nQuarto: New Document\n\n\n\nQuarto: Render\n\n\n\nQuarto: Insert Code Cell\n\n\n\nQuarto: Run Current Cell\n\n\n\nQuarto: Run All Cells Above\n\n\n\nQuarto: Run All Cells\n\n\n\n\n\n\n\n\n\nVisual Editor\n(Screenshot of Visual Editor toolbar, with callouts for features below)\n\nFeatures within the Visual Editor\n\nInsert citations\nInsert and edit tables\nStyle options\nAdd/edit attributes\nInsert Anything\n\n\n\n\n\nRender\nSave, then Render to preview the document output. The resulting HTML/PDF/MS Word/etc. document will be created and saved in the same directory as the .qmd file.\nRender:\n\nRender button (Screenshot RStudio and VS Code)\nOn command line:\n\n\nTerminal\n\nquarto preview document.qmd\n\n\nWhen you render a document, Quarto:\n\nRuns the code and embeds results and text into an .md file with Knitr or Jupyter.\nConverts the .md file into the output format with Pandoc.\n\n\nExecution Engine\n(This is getting into the weeds, but I do think it is important for new users to understand that its either Knitr or Jupyter that is doing the code evaluation. It’s relevant for other sections of cheatsheet: code cell options, inline code, tables, parameters. I’ll attempt to minimize/streamline.)\nCode is executed either with:\n\nKnitr: If there are {r} blocks. If there are also {python} blocks, they will be executed using the reticulate package.\nJupyter: Any other code blocks (e.g. {python}, {julia}, {bash}). Kernel determined by the first executable code block. Other language blocks not evaluated.\n\nOverride engine selection with engine:\nengine: jupyter\nSet engine options with knitr or jupyter:\n\n\n\nknitr:\n  opts_knit:\n    verbose: true\n\n\njupyter: julia-1.9\n\n\n\n\n\n\nPreview\n(Screenshot of output here)\n\n\nPublish\n\n\nTerminal\n\nquarto publish {venue} document.qmd\n\n{venue}: quarto-pub, connect, gh-pages, netlify, confluence, (coming in Quarto 1.4) posit-cloud\nPublish button in RStudio (Screenshot here)\n(Need some text to distinguish these three venues)\n\nQuarto Pubs\nPosit Cloud\nPosit Connect to share Quarto documents securely, schedule automatic updates, and interact with parameters in real time. https://posit.co/products/enterprise/connect/."
+    "objectID": "html/quarto.html#author",
+    "href": "html/quarto.html#author",
+    "title": "Publish and Share with Quarto :: Cheatsheet",
+    "section": "Author",
+    "text": "Author\n\nSource File: hello.qmd\n---\ntitle: \"Hello, Penguins\"\nformat: html\nexecute:\n  echo: false\n---\n\n## Meet the penguins\n\nThe `penguins` data contains size measurements for \npenguins from three islands in the Palmer Archipelago, \nAntarctica.\n\nThe three species of penguins have quite distinct \ndistributions of physical dimensions (@fig-penguins).\n\n```{r}\n#| label: fig-penguins\n#| fig-cap: \"Dimensions of penguins across three species.\"\n#| warning: false\nlibrary(tidyverse, quietly = TRUE)\nlibrary(palmerpenguins)\npenguins |&gt;\n  ggplot(aes(x = flipper_length_mm, y = bill_length_mm)) +\n  geom_point(aes(color = species)) +\n  scale_color_manual(\n    values = c(\"darkorange\", \"purple\", \"cyan4\")) +\n  theme_minimal()\n```\n\n\nHighlights in the source file\n\nSet format(s) and options. Use YAML Syntax.\n---\ntitle: \"Hello, Penguins\"\nformat: html\nexecute:\n  echo: false\n---\n## Write with **Markdown**\nRStudio: Help &gt; Markdown Quick Reference\nRStudio & VS Code: Use the Visual Editor\n## Meet the penguins\n\nThe `penguins` data contains size measurements for \npenguins from three islands in the Palmer Archipelago, \nAntarctica.\n\nThe three species of penguins have quite distinct \ndistributions of physical dimensions (@fig-penguins).\nInclude code. R, Python, Julia, Observable, or any language with a Jupyter kernel.\n```{r}\n#| label: fig-penguins\n#| fig-cap: \"Dimensions of penguins across three species.\"\n#| warning: false\nlibrary(tidyverse, quietly = TRUE)\nlibrary(palmerpenguins)\npenguins |&gt;\n  ggplot(aes(x = flipper_length_mm, y = bill_length_mm)) +\n  geom_point(aes(color = species)) +\n  scale_color_manual(\n    values = c(\"darkorange\", \"purple\", \"cyan4\")) +\n  theme_minimal()\n```\n\n\n\nUse a tool with a rich authoring experience\nRStudio, or\nVisual Studio Code + Quarto extension\n\nRun code cells as you write\nRender with a button or keyboard shortcut\nEdit Quarto documents with a Visual Editor\n\n\nApply formatting in Visual Editor. Saved as Markdown in source.\nInsert elements like code cells, cross references, and more.\n\n\n\n\nOr any text editor\nQuarto documents (.qmd) can be edited in any tool that edits text."
   },
   {
-    "objectID": "html/quarto.html#embed-code",
-    "href": "html/quarto.html#embed-code",
-    "title": "quarto :: Cheatsheet",
-    "section": "Embed Code",
-    "text": "Embed Code\n\nCode Cells\nCode cells start with ```{r}, or ```{python}, and end with ```.\nOr use Insert Code Chunk/Cell.\n\n\n\n```{r}\n#| label: chunk-label\n```\n\n\n```{python}\n#| label: chunk-label\n```\n\n\n\nCan also use {ojs} or {julia}.\nAdd YAML code chunk options using #| comments inside the chunk.\n\n\nExecution Options\nSet at the chunk level:\n\n\n\n```{r}\n#| echo: false\n```\n\n\n```{python}\n#| echo: false\n```\n\n\n\nOr globally in the YAML header with the execute option:\n---\nexecute:\n  echo: false\n---\n\n\n\n\n\n\n\n\nOption\nDefault\nEffects\n\n\n\n\necho\ntrue\nfalse: hide code in output\nfenced: show code cell syntax along with code\n\n\neval\ntrue\nfalse: don’t run code\n\n\ninclude\ntrue\nfalse: don’t include code or results in output\n\n\noutput\ntrue\nfalse: don’t include results\nasis: treat results as raw markdown\n\n\nwarning\ntrue\nfalse: don’t include warnings in output\n\n\nerror\nfalse\ntrue: include error in output and continue with render\n\n\n\n\n\nOther Cell Options\nOther options to control figures, tables, layout.\nAvailable options depend on engine:\n\nKnitr: https://quarto.org/docs/reference/cells/cells-knitr.html\nJupyter: https://quarto.org/docs/reference/cells/cells-jupyter.html\n\n\n\nInline Code\nUse computed values directly in text sections. Code is evaluated at render and results appear as text.\n\n\n\nKnitr\nTwo times two is `r 2*2`.\n\n\nJupyter\nComing in Quarto v1.4\nTwo times two is `{python} 2*2`.\n\n\nOutput\nTwo times two is 4."
+    "objectID": "html/quarto.html#render",
+    "href": "html/quarto.html#render",
+    "title": "Publish and Share with Quarto :: Cheatsheet",
+    "section": "Render",
+    "text": "Render\nSave, then render to preview the document output.\n\n\nTerminal\n\nquarto preview hello.qmd\n\nRStudio & VS Code: Use Render button\nThe resulting HTML/PDF/MS Word/etc. document will be created and saved in the same directory as the source .qmd file.\n\nRendered output: hello.html\n\n\n\nHighlights in the rendered output\n\nFeatures for scientific publishing. Cross references, citations, equations, and more.\nOutput integrated into document. Control how output appears with special comments in your code.\n\n\n\nBehind the Scenes\nWhen you render a document, Quarto:\n\nRuns the code and embeds results and text into an .md file with:\n\nKnitr, if any {r} cells, or\nJupyter, if any other cells.\n\nConverts the .md file into the output format with Pandoc."
   },
   {
-    "objectID": "html/quarto.html#write-with-markdown",
-    "href": "html/quarto.html#write-with-markdown",
-    "title": "quarto :: Cheatsheet",
-    "section": "Write With Markdown",
-    "text": "Write With Markdown\nRStudio: Help &gt; Markdown Quick Reference\nhttps://quarto.org/docs/authoring/markdown-basics.html\nOr use Visual Editor"
-  },
-  {
-    "objectID": "html/quarto.html#figures",
-    "href": "html/quarto.html#figures",
-    "title": "quarto :: Cheatsheet",
-    "section": "Figures",
-    "text": "Figures\n\nMarkdown\n![CAPTION](image.png){#fig-LABEL fig-alt=\"ALT TEXT\"}\n\n\nComputation\n```{r}\n#| label: fig-LABEL\n#| fig-cap: CAPTION\n#| fig-alt: ALT TEXT\n{{ plot code here }}\n```"
-  },
-  {
-    "objectID": "html/quarto.html#tables",
-    "href": "html/quarto.html#tables",
-    "title": "quarto :: Cheatsheet",
-    "section": "Tables",
-    "text": "Tables\n\nMarkdown\n|object | radius|\n|:------|------:|\n|Sun    | 696000|\n|Earth  |   6371|\n\n\nComputation\nOutput a markdown table or an HTML table (regardless of your format) from your code.\n\n\n\nKnitr\nUse knitr::kable() to produce markdown:\n```{r}\n#| label: tbl-LABEL\n#| tbl-cap: CAPTION\n\nknitr::kable(head(cars))\n```\nAlso see the R packages: gt, flextable, kableExtra.\n\n\nJupyter\nCombine Markdown() with a function that outputs markdown:\n```{python}\n#| label: tbl-LABEL\n#| tbl-cap: CAPTION\nfrom tabulate import tabulate\ntable = [[\"Sun\",\"696,000\",1.989e30],\n         [\"Earth\",\"6,371\",5.972e24]]\nMarkdown(tabulate(table, tablefmt='html'))\n```"
-  },
-  {
-    "objectID": "html/quarto.html#cross-references",
-    "href": "html/quarto.html#cross-references",
-    "title": "quarto :: Cheatsheet",
-    "section": "Cross References",
-    "text": "Cross References\n\nAdd labels:\n\nCode cell:\n#| label: prefix-LABEL\nMarkdown: add attribute #prefix-LABEL\n\nAdd references: @prefix-LABEL, e.g.\nYou can see in @fig-scatterplot, that...\n\n\n\n\nprefix\nRenders\n\n\n\n\nfig-\nFigure 1\n\n\ntbl-\nTable 1\n\n\neq-\nEquation 1\n\n\nsec-\nSection 1"
-  },
-  {
-    "objectID": "html/quarto.html#citations",
-    "href": "html/quarto.html#citations",
-    "title": "quarto :: Cheatsheet",
-    "section": "Citations",
-    "text": "Citations\n\nAdd bibliography file to the YAML header:\n---\ntitle: \"My Document\"\nbibliography: references.bib\n---\nAdd citations: [@citation], or @citation\n\nInsert Citations dialog in the Visual Editor:\n\nBuild your bibliography file from your Zotero library, DOI, Crossref, DataCite, or PubMed\nGenerate citation markdown syntax"
-  },
-  {
-    "objectID": "html/quarto.html#callouts",
-    "href": "html/quarto.html#callouts",
-    "title": "quarto :: Cheatsheet",
-    "section": "Callouts",
-    "text": "Callouts\n::: {.callout-tip}\n## Title\n\nText\n:::\nInstead of tip use one of: note, caution, warning, or important:\n\n\n\n\n\n\ntip\n\n\n\n\n\n\n\n\n\n\n\n\nnote\n\n\n\n\n\n\n\n\n\n\n\n\ncaution\n\n\n\n\n\n\n\n\n\n\n\n\nwarning\n\n\n\n\n\n\n\n\n\n\n\n\nimportant"
-  },
-  {
-    "objectID": "html/quarto.html#shortcodes",
-    "href": "html/quarto.html#shortcodes",
-    "title": "quarto :: Cheatsheet",
-    "section": "Shortcodes",
-    "text": "Shortcodes\nInclude the contents of _file.qmd in document:\n{{&lt; include _file.qmd &gt;}} \nEmbed the code cell labelled fig-LABEL from the file notebook.ipynb in the document:\n{{&lt; embed notebook.ipynb#fig-LABEL &gt;}}\nEmbed a video in the document. Can also be a link to YouTube, or Vimeo:\n{{&lt; video local-video.mp4 &gt;}}\nInsert a format appropriate pagebreak:\n{{&lt; pagebreak &gt;}}\nInclude the value of the option title set in the document metadata. Also see var and env shortcodes:\n{{&lt; meta title &gt;}}"
-  },
-  {
-    "objectID": "html/quarto.html#layout",
-    "href": "html/quarto.html#layout",
-    "title": "quarto :: Cheatsheet",
-    "section": "Layout",
-    "text": "Layout\nUse the layout-ncol and layout-nrow attributes to arrange content in a grid:\n:::: {layout-ncol=2}\n::: {}\nLeft \n:::\n::: {}\nRight\n:::\n::::\nUse layout for more complicated arrangements:\n:::: {layout=\"[[1, 1], [1]]\"}\n::: {}\nTop Left \n:::\n::: {}\nTop Right\n:::\n::: {}\nBottom\n:::\n::::\nUse layout-ncol, layout-nrow, layout as code chunk options."
-  },
-  {
-    "objectID": "html/quarto.html#set-output-formats-and-their-options-in-yaml",
-    "href": "html/quarto.html#set-output-formats-and-their-options-in-yaml",
-    "title": "quarto :: Cheatsheet",
-    "section": "Set Output Formats and Their Options in YAML",
-    "text": "Set Output Formats and Their Options in YAML\nCommon values for format: html, pdf1, docx, odt, rtf, gfm, pptx, revealjs, beamer2\n\n\n\nSingle output, default options:\n---\ntitle: \"My Document\"\nauthor: \"Author Name\"\nformat: html\n---\n\n\nSingle output, set options:\n---\ntitle: \"My Document\"\nauthor: \"Author Name\"\nformat: \n  html: \n    code-fold: true\n    toc: true\n---\n\nIndent format two spaces\nIndent options four spaces\n\n\n\nMultiple outputs:\nUse quarto render on command line or Render All\n---\ntitle: \"My Document\"\nauthor: \"Author Name\"\ntoc: true\nformat: \n  html: \n    code-fold: true\n  pdf: default\n---\n\nTop-level options apply to all formats\n\n\n\n\n\nOutput Options Table\n\n\n\n\n\nImportant Options. The first column is the option name, the second\ncolumn is the description and possible values, and then remaining\ncolumns show what file types each option can be applied to, and whether\nit can also be used as a code cell option.\n  \n    \n    \n      Option\n      Description\n      html/revealjs\n      pdf/beamer\n      docx/pptx\n      cell level?\n    \n  \n  \n    \n      Navigation\n    \n    toc\nAdd a table of contents (true or false)\nX\nX\nX\n\n    toc-depth\nLowest level of headings to add to table of contents (e.g. 2, 3)\nX\nX\nX\n\n    anchor-sections\nShow section anchors on mouse hover (true or false)\nX\n\n\n\n    \n      Style\n    \n    highlight-style\nSyntax highlighting (e.g. arrow, pygments, kate, zenburn)\nX\nX\nX\n\n    mainfont, monofont\nSet CSS `font-family` for HTML, uses fontspec package for LaTeX\nX\nX\n\n\n    theme\nProvide  Bootswatch theme name (e.g. cosmo, darkly, solar etc.)\nX\n\n\n\n    css\nCSS or SCSS file to use to style the document (e.g. \"style.css\")\nX\n\n\n\n    reference-doc\ndocx/pptx file containing template styles (e.g. file.docx, file.pptx)\n\n\nX\n\n    \n      NA\n    \n    include-in-header, include-before-body, include-after-body\nFiles of content to include in output document\nX\nX\n\n\n    keep-md, keep-tex, keep-ipynb\nKeep intermediate files (true or false)\nX\nX\nX\n\n    \n      LaTeX\n    \n    documentclass, classoption\nSet document class and its options\n\nX\n\n\n    pdf-engine\nLaTeX engine to produce PDF output (xelatex, pdflatex, lualatex)\n\nX\n\n\n    cite-method\nMethod used to format citations (citeproc, natbib, biblatex)\n\nX\n\n\n    \n      Code\n    \n    code-fold\nLet readers toggle the display of R code (false, true, or show)\nX\n\n\nX\n    code-tools\nAdd menu for hiding, showing, and downloading code (true or false)\nX\n\n\n\n    code-overflow\nDisplay of wide code (scroll, or wrap)\nX\n\n\nX\n    \n      Figures\n    \n    fig-align\nAlignment of figures (default, left, right, center)\nX\nX\ndocx only\nX\n    fig-width, fig-height\nSet default width and height for figures\nX\nX\nX\nKnitr only\n    fig-format\nFormat for Matplotlib or R figures (retina, png, jpeg, svg, or pdf)\nX\nX\nX\n\n    fig-env\nLaTeX environment for figure output\n\nX\n\nX\n    fig-pos\nLaTeX figure position used in \\begin{figure}[].\n\nX\n\nX\n  \n  \n  \n\n\n\n\nVisit https://quarto.org/docs/reference/ to see all of a format’s options"
+    "objectID": "html/quarto.html#publish",
+    "href": "html/quarto.html#publish",
+    "title": "Publish and Share with Quarto :: Cheatsheet",
+    "section": "Publish",
+    "text": "Publish\n\n\nTerminal\n\nquarto publish {venue} hello.qmd\n\n{venue}: quarto-pub, connect, gh-pages, netlify, confluence, (v1.4) posit-cloud\nRStudio: Use Publish button \n\nQuarto Pub Free publishing service for Quarto content.\nPosit Cloud Cloud-hosted, control access to project and output. \nPosit Connect Org-hosted, control access, schedule updates."
   },
   {
     "objectID": "html/quarto.html#quarto-projects",
     "href": "html/quarto.html#quarto-projects",
-    "title": "quarto :: Cheatsheet",
+    "title": "Publish and Share with Quarto :: Cheatsheet",
     "section": "Quarto Projects",
-    "text": "Quarto Projects\nA collection of Quarto documents and a configuration file, _quarto.yml\nWebsites, blogs, books, and more…\nGet started from the command line:\n\n\nTerminal\n\nquarto create project {type}\n\nOr RStudio: New Project\n{type}: website, blog, book, confluence"
+    "text": "Quarto Projects\n\nCreate websites, books and more\nA directory of Quarto documents + a configuration file (_quarto.yml)\nSee examples at: https://quarto.org/docs/gallery/\nGet started from the command line:\n\n\nTerminal\n\nquarto create project {type}\n\n{type}: default, website, blog, book, confluence, (v1.4) manuscript\nRStudio: Use File &gt; New Project"
   },
   {
-    "objectID": "html/quarto.html#quarto-commands",
-    "href": "html/quarto.html#quarto-commands",
-    "title": "quarto :: Cheatsheet",
-    "section": "Quarto Commands",
-    "text": "Quarto Commands\nQuarto is a command line tool. Run commands in the Terminal. Add --help to get more information.\n\n\n\n\n\n\n\nThe Render button is like:\nquarto preview document.qmd\n\n\nRender all formats:\nquarto render document.qmd\n\n\nRender to a specific format:\nquarto render document.qmd --to pdf\n\n\nRender a project:\nquarto render\n\n\nInstall tinytex, recommended for PDF output:\nquarto install tinytex\n\n\nPublish a document:\nquarto publish {venue} document.qmd\n\n\nPublish a project:\nquarto publish {venue}\n\n\nDiagnostics on Quarto and rendering engines:\nquarto check"
+    "objectID": "html/quarto.html#include-code",
+    "href": "html/quarto.html#include-code",
+    "title": "Publish and Share with Quarto :: Cheatsheet",
+    "section": "Include Code",
+    "text": "Include Code\n\nCode Cells\nCode cells start with ```{language}, and end with ```.\nRStudio & VS Code: Use Insert Code Chunk/Cell.\n\n\n\n```{r}\n#| label: chunk-id\n```\n\n\n```{python}\n#| label: chunk-id\n```\n\n\n\nOther languages: {julia}, {ojs}\nAdd code cell options with #| comments.\nCell options control execution, figures, tables, layout and more. See them all at: https://quarto.org/docs/reference/cells/\n\n\nExecution Options\n\n\n\n\n\n\n\n\nOption\nDefault\nEffects\n\n\n\n\necho\ntrue\nfalse: hide code in output\nfenced: include code cell syntax\n\n\neval\ntrue\nfalse: don’t run code\n\n\ninclude\ntrue\nfalse: don’t include code or results\n\n\noutput\ntrue\nfalse: don’t include results\nasis: treat results as raw markdown\n\n\nwarning\ntrue\nfalse: don’t include warnings in output\n\n\nerror\nfalse\ntrue: include error in output and continue with render\n\n\n\nSet execution options at the cell level:\n\n\n\n```{r}\n#| echo: false\n```\n\n\n```{python}\n#| echo: false\n```\n\n\n\nSet options in code cells with #| comments and YAML syntax: key: value.\nOr globally in the YAML header with the execute option:\n---\nexecute:\n  echo: false\n---\n\n\nInline Code\nUse computed values directly in text sections. Code is evaluated at render and results appear as text.\n\n\n\nKnitr\nValue is `r 2 + 2`.\n\n\nJupyter\nv1.4\nValue is `{python} 2 + 2`.\n\n\nOutput\nValue is 4."
   },
   {
-    "objectID": "html/quarto.html#parameters",
-    "href": "html/quarto.html#parameters",
-    "title": "quarto :: Cheatsheet",
-    "section": "Parameters",
-    "text": "Parameters\nParameterize your documents to reuse with new inputs (e.g. data, values, etc.).\n\n\n\nknitr\n\nAdd parameters in the header as sub-values of params:\n---\nparams:\n  state: \"hawaii\"\n---\nCall parameters in code using params$name:\n```{r}\nparams$state\n```\n\n\n\njupyter\n\nAdd parameters to a code cell tagged parameters:\n```{python}\n#| tags: [parameters]\n\nstate = \"hawaii\"\n```\nCall parameters in code:\n```{python}\nstate\n```\n\n\n\n\nSet parameters at render with the -P option to quarto render\n\n\nTerminal\n\nquarto render report.qmd -P state:\"colorado\""
+    "objectID": "html/quarto.html#set-formats-and-options",
+    "href": "html/quarto.html#set-formats-and-options",
+    "title": "Publish and Share with Quarto :: Cheatsheet",
+    "section": "Set Formats and Options",
+    "text": "Set Formats and Options\n\n\n\n\nSet Format Options\n---\ntitle: \"My Document\"\nformat: \n  html: \n    code-fold: true\n    toc: true\n---\n\nIndent format 2 spaces\nIndent options 4 spaces\n\n\n\n\nMultiple Formats\n---\ntitle: \"My Document\"\ntoc: true\nformat: \n  html: \n    code-fold: true\n  pdf: default\n---\n\nTop-level options (e.g. toc) apply to all formats\n\n\n\n\nCommon values for format: html, pdf2, docx, odt, rtf, gfm, pptx, revealjs, beamer3\nRender all formats:\n\n\nTerminal\n\nquarto render hello.qmd\n\nRender a specific format:\n\n\nTerminal\n\nquarto render hello.qmd --to pdf\n\n\nOutput Options Table\n\n\n\n\n\nImportant Options. The first column is the option name, an “X” in the\nnext three columns indicates whether the option applies to the format,\nthe fourth column decribes the options and possible values, the final\ncolumn indicates whether the options can also be set in a code cell.\n  \n    \n    \n      Option\n      html/revealjs\n      pdf/beamer\n      docx/pptx\n      Description\n      cell level?\n    \n  \n  \n    \n      Navigation\n    \n    toc\nX\nX\nX\nAdd a table of contents (true or false)\n\n\n    toc-depth\nX\nX\nX\nLowest level of headings to add to table of contents (e.g. 2, 3)\n\n\n    anchor-sections\nX\n\n\nShow section anchors on mouse hover (true or false)\n\n\n    \n      Style\n    \n    highlight-style\nX\nX\nX\nSyntax highlighting theme (e.g. arrow, pygments, kate, zenburn)\n\n\n    mainfont, monofont\nX\nX\n\nFont name. HTML: sets CSS font-family; LaTeX: via fontspec package\n\n\n    theme\nX\n\n\nBootswatch theme name (e.g. cosmo, darkly, solar etc.)\n\n\n    css\nX\n\n\nCSS or SCSS file to use to style the document (e.g. “style.css”)\n\n\n    reference-doc\n\n\nX\ndocx/pptx file containing template styles (e.g. file.docx, file.pptx)\n\n\n    \n      NA\n    \n    include-in-header\nX\nX\n\nFiles of content to include in header of output document, also include-before-body, include-after-body\n\n\n    keep-md\nX\nX\nX\nKeep intermediate files (true or false), also keep-tex, keep-ipynb\n\n\n    \n      LaTeX\n    \n    documentclass\n\nX\n\nLaTeX document class, set document options with classoption\n\n\n    pdf-engine\n\nX\n\nLaTeX engine to produce PDF output (xelatex, pdflatex, lualatex)\n\n\n    cite-method\n\nX\n\nMethod used to format citations (citeproc, natbib, biblatex)\n\n\n    \n      Code\n    \n    code-fold\nX\n\n\nLet readers toggle the display of R code (false, true, or show)\n\nX\n    code-tools\nX\n\n\nAdd menu for hiding, showing, and downloading code (true or false)\n\n\n    code-overflow\nX\n\n\nDisplay of wide code (scroll, or wrap)\n\nX\n    \n      Figures\n    \n    fig-align\nX\nX\ndocx only\nAlignment of figures (default, left, right, center)\n\nX\n    fig-width, fig-height\nX\nX\nX\nDefault width and height for figures in inches\n\nKnitr only\n    fig-format\nX\nX\nX\nFormat for Matplotlib or R figures (retina, png, jpeg, svg, or pdf)\n\n\n  \n  \n  \n\n\n\n\nVisit https://quarto.org/docs/reference/ to see all options by format"
   },
   {
-    "objectID": "html/quarto.html#interactivity",
-    "href": "html/quarto.html#interactivity",
-    "title": "quarto :: Cheatsheet",
-    "section": "Interactivity?",
-    "text": "Interactivity?"
-  },
-  {
-    "objectID": "html/quarto.html#extensions",
-    "href": "html/quarto.html#extensions",
-    "title": "quarto :: Cheatsheet",
-    "section": "Extensions?",
-    "text": "Extensions?\nShortcodes, Filters, Journal Article Templates\nquarto add\nquarto use\n\nCC BY SA Posit Software, PBC • info@posit.co • posit.co\nLearn more at quarto.org.\nQuarto 1.3\nUpdated: 2023-07."
+    "objectID": "html/quarto.html#add-content",
+    "href": "html/quarto.html#add-content",
+    "title": "Publish and Share with Quarto :: Cheatsheet",
+    "section": "Add Content",
+    "text": "Add Content\n\nFigures\n\nMarkdown\n![CAP](image.png){#fig-LABEL fig-alt=\"ALT\"}\n\n\nComputation\n```{python}\n#| label: fig-LABEL\n#| fig-cap: CAP\n#| fig-alt: ALT\n{{ plot code here }}\n```\nOr {r}\n\n\n\nTables\n\nMarkdown\n|object | radius|\n|:------|------:|\n|Sun    | 696000|\n|Earth  |   6371|\n\n: CAPTION {#tbl-LABEL}\n\n\nComputation\nOutput a markdown table or an HTML table from your code.\n\n\n\nKnitr\nUse knitr::kable() to produce markdown:\n```{r}\n#| label: tbl-LABEL\n#| tbl-cap: CAPTION\n\nknitr::kable(head(cars))\n```\nAlso see the R packages: gt, flextable, kableExtra.\n\n\nJupyter\nAdd Markdown() to Markdown output:\n```{python}\n#| label: tbl-LABEL\n#| tbl-cap: CAPTION\nimport pandas as pd, tabulate\nfrom IPython.display import Markdown\ndf = pd.DataFrame({\"A\": [1, 2], \n                   \"B\": [1, 2]})\nMarkdown(df.to_markdown(index=False))\n```\n\n\n\n\n\n\nCross References\n\nAdd labels:\n\nCode cell: add option label: prefix-LABEL\nMarkdown: add attribute #prefix-LABEL\n\nAdd references: @prefix-LABEL, e.g.\nYou can see in @fig-scatterplot, that...\n\n\n\n\nprefix\nRenders\n\n\n\n\nfig-\nFigure 1\n\n\ntbl-\nTable 1\n\n\neq-\nEquation 1\n\n\nsec-\nSection 1\n\n\n\n\n\nCitations\n\nAdd bibliography file to the YAML header:\n---\nbibliography: references.bib\n---\nAdd citations: [@citation], or @citation\n\nRStudio & VS Code: Use Insert Citations dialog in the Visual Editor. Build your bibliography file from your Zotero library, DOI, Crossref, DataCite, or PubMed.\n\n\nCallouts\n::: {.callout-tip}\n## Title\n\nText\n:::\nInstead of tip use one of: note, caution, warning, or important:\n\n\n\n\n\n\ntip\n\n\n\n\n\n\n\n\n\n\n\n\nnote\n\n\n\n\n\n\n\n\n\n\n\n\ncaution\n\n\n\n\n\n\n\n\n\n\n\n\nwarning\n\n\n\n\n\n\n\n\n\n\n\n\nimportant\n\n\n\n\n\n\n\n\nShortcodes\n{{&lt; include _file.qmd &gt;}} \n{{&lt; embed file.ipynb#id &gt;}}\n{{&lt; video video.mp4 &gt;}}\n\nCC BY SA Posit Software, PBC • info@posit.co • posit.co\nLearn more at quarto.org.\nQuarto 1.3\nUpdated: 2023-08."
   },
   {
     "objectID": "html/quarto.html#footnotes",
     "href": "html/quarto.html#footnotes",
-    "title": "quarto :: Cheatsheet",
+    "title": "Publish and Share with Quarto :: Cheatsheet",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nPDFs and Beamer slides require LaTeX, use:\n\n\nTerminal\n\nquarto install tinytex\n\n↩︎\nPDFs and Beamer slides require LaTeX, use:\n\n\nTerminal\n\nquarto install tinytex\n\n↩︎"
+    "text": "Footnotes\n\n\nArtwork from “Hello, Quarto” keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by Allison Horst.↩︎\nPDFs and Beamer slides require LaTeX, use:\n\n\nTerminal\n\nquarto install tinytex\n\n↩︎\nPDFs and Beamer slides require LaTeX, use:\n\n\nTerminal\n\nquarto install tinytex\n\n↩︎"
   },
   {
     "objectID": "html/rmarkdown.html",
@@ -1194,6 +1131,6 @@
     "href": "index.html",
     "title": "Posit Cheatsheets",
     "section": "",
-    "text": "HTML versions of our popular cheatsheets. PDF versions are available to download on each cheatsheet page. There are also non-English translations available for many cheatsheets, contributed by the community.\n\n\n\n\n\n\n\n\n\n\n\n\nRStudio IDE :: Cheatsheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData visualization with ggplot2 :: Cheat Sheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData transformation with dplyr :: Cheatsheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData import with the tidyverse :: Cheatsheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData tidying with tidyr :: Cheatsheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nApply functions with purrr :: Cheatsheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFactors with forcats :: Cheatsheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDates and times with lubridate :: Cheatsheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nString manipulation with stringr :: Cheatsheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nShiny :: Cheatsheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPackage Development :: Cheatsheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nquarto :: Cheatsheet\n\n\nQMD Edition\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nrmarkdown :: Cheatsheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDeep Learning with Keras :: Cheatsheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nREST APIs with plumber :: Cheatsheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUse Python with R with reticulate :: Cheatsheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData science in Spark with sparklyr :: Cheatsheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "HTML versions of our popular cheatsheets. PDF versions are available to download on each cheatsheet page. There are also non-English translations available for many cheatsheets, contributed by the community.\n\n\n\n\n\n\n\n\n\n\n\n\nRStudio IDE :: Cheatsheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData visualization with ggplot2 :: Cheat Sheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData transformation with dplyr :: Cheatsheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData import with the tidyverse :: Cheatsheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData tidying with tidyr :: Cheatsheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nApply functions with purrr :: Cheatsheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFactors with forcats :: Cheatsheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDates and times with lubridate :: Cheatsheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nString manipulation with stringr :: Cheatsheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nShiny :: Cheatsheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPackage Development :: Cheatsheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPublish and Share with Quarto :: Cheatsheet\n\n\nQMD Edition\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nrmarkdown :: Cheatsheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDeep Learning with Keras :: Cheatsheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nREST APIs with plumber :: Cheatsheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUse Python with R with reticulate :: Cheatsheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData science in Spark with sparklyr :: Cheatsheet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]
